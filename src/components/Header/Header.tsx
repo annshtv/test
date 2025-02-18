@@ -4,9 +4,6 @@ import ButtonSubscribe from "../../UI/Buttons/ButtonSubscribe";
 import Navbar from "../Navbar/Navbar";
 
 const HeaderWrapper = styled.div`
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-
-  font-family: 'Montserrat Alternates', sans-serif;
   .header {
     background-color: #f7ede8;
     padding: 0px;
@@ -17,12 +14,9 @@ const HeaderWrapper = styled.div`
     margin-left: auto;
     display: flex;
     flex-direction: column;
+    font-family: "Montserrat", sans-serif;
   }
-  .navigation {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
+
   .navigation p {
     font-family: Montserrat Alternates;
     font-weight: bold;
@@ -30,10 +24,7 @@ const HeaderWrapper = styled.div`
     line-height: 160%;
     color: #000;
   }
-  .logo img {
-    width: 74px;
-    height: 74px;
-  }
+
   .menus {
     display: flex;
     gap: 60px;
@@ -43,10 +34,12 @@ const HeaderWrapper = styled.div`
   .b1 {
     font-family: Montserrat Alternates;
     border: 2px solid #000;
+    font-weight: bold;
     border-radius: 8px;
     padding: 12px 24px;
     width: 188px;
     height: 41px;
+    background-color: #f7ede8;
   }
   .buttons {
     gap: 20px;
@@ -65,57 +58,64 @@ const HeaderWrapper = styled.div`
     color: #cd4631;
   }
   p {
-  font-weight: 500;
-font-size: 16px;
-line-height: 160%;
-text-align: center;
-color: #4d4d4d;
+    font-family: Montserrat Alternates;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    text-align: center;
+    color: #4d4d4d;
   }
-.cover2 {
-border-radius: 12px;
-max-width: 373px;
-min-height: 373px;
-}
-.covers {
-display: flex;
-justify-content: space-between;
-margin-top: 120px;
-}
+  .cover2 {
+    border-radius: 12px;
+    max-width: 373px;
+    min-height: 373px;
+  }
+  .covers {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 120px;
+  }
 `;
 function Header() {
-  const lastWordStyling = (text:string) => {
+  const lastWordStyling = (text: string) => {
     const words = text.split(" ");
     const lastWord = words.pop();
-    return { __html: `${words.join(" ")}<br /><span class="last-word">${lastWord}</span>` };
+    return {
+      __html: `${words.join(
+        " "
+      )}<br /><span class="last-word">${lastWord}</span>`,
+    };
   };
 
   return (
     <HeaderWrapper>
-      <Navbar/>
+      <Navbar />
       <div className="header">
-        <h1 dangerouslySetInnerHTML={lastWordStyling("Your Daily Podcast")}></h1>
-        <p>We cover all kinds of categories and <br/>
-        a weekly special guest.</p>
+        <h1
+          dangerouslySetInnerHTML={lastWordStyling("Your Daily Podcast")}
+        ></h1>
+        <p>
+          We cover all kinds of categories and <br />a weekly special guest.
+        </p>
         <ButtonSubscribe styles="kek">subscribe</ButtonSubscribe>
         <div className="covers">
           <div className="cover1">
-          <img src="pictures/cover1.png" alt=""/>
+            <img src="pictures/cover1.png" alt="" />
           </div>
           <div className="cover22">
-            <img src="pictures/cover22.png" alt=""/>
+            <img src="pictures/cover22.png" alt="" />
           </div>
           <div className="cover3">
-          <img src="pictures/cover3.png" alt=""/>
+            <img src="pictures/cover3.png" alt="" />
           </div>
           <div className="cover4">
-          <img src="pictures/cover4.png" alt=""/>
+            <img src="pictures/cover4.png" alt="" />
           </div>
           <div className="cover5">
-          <img src="pictures/cover55.png" alt=""/>
+            <img src="pictures/cover55.png" alt="" />
           </div>
         </div>
       </div>
-
     </HeaderWrapper>
   );
 }

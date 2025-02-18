@@ -4,8 +4,8 @@ import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import styles from './Navbar.module.css';
 function Navbar() {
   return (
-        <div className="navigation">
-          <div className="logo">
+        <div className={styles.navigation}>
+          <div className={styles.logo}>
             <img src="pictures/logo.png" alt="logo" />
           </div>
           <div className="menus">
