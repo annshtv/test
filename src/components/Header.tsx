@@ -112,7 +112,7 @@ function Header() {
           <div className="cover1">
           <img src="pictures/cover1.png" alt=""/>
           </div>
-          <div className="cover2">
+          <div className="cover22">
             <img src="pictures/cover22.png" alt=""/>
           </div>
           <div className="cover3">
