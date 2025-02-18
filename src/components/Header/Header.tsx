@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import ButtonSubscribe from "../UI/Buttons/ButtonSubscribe";
+import ButtonSubscribe from "../../UI/Buttons/ButtonSubscribe";
+import Navbar from "../Navbar/Navbar";
 
 const HeaderWrapper = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
@@ -37,6 +38,7 @@ const HeaderWrapper = styled.div`
     display: flex;
     gap: 60px;
     max-width: 1160px;
+    align-items: baseline;
   }
   .b1 {
     font-family: Montserrat Alternates;
@@ -89,21 +91,8 @@ function Header() {
 
   return (
     <HeaderWrapper>
+      <Navbar/>
       <div className="header">
-        <div className="navigation">
-          <div className="logo">
-            <img src="pictures/logo.png" alt="logo" />
-          </div>
-          <div className="menus">
-            <span>Episodes</span>
-            <span>About</span>
-            <span>More</span>
-          </div>
-          <div className="buttons">
-            <button className="b1">RECENT EPISODES</button>
-            <ButtonSubscribe>subscribe</ButtonSubscribe>
-          </div>
-        </div>
         <h1 dangerouslySetInnerHTML={lastWordStyling("Your Daily Podcast")}></h1>
         <p>We cover all kinds of categories and <br/>
         a weekly special guest.</p>
