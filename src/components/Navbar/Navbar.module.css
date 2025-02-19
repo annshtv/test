@@ -11,3 +11,11 @@
     margin-left: auto;
     margin-right: auto;
 }
+.navLink {
+  text-decoration: none; 
+  color: inherit;
+}
+
+.navLink:hover {
+  color: #0056b3;
+}
