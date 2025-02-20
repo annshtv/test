@@ -74,8 +74,9 @@ const HeaderWrapper = styled.div`
   }
   .covers {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 120px;
+    flex-wrap: wrap;
   }
 `;
 function Header() {
