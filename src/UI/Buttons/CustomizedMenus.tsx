@@ -65,7 +65,7 @@ export default function CustomizedMenus() {
   };
 
   return (
-    <Box >
+    <Box>
       <Button
         id="demo-customized-button"
         aria-controls={open ? 'demo-customized-menu' : undefined}
@@ -75,7 +75,19 @@ export default function CustomizedMenus() {
         disableElevation
         onClick={handleClick}
         endIcon={<ExpandCircleDownIcon />}
-        sx={{backgroundColor: '#000000', width: '0px'}}
+        sx={{ 
+          backgroundColor: '#000000', 
+          minWidth: '20px', 
+          borderRadius: '50%', 
+          padding: '0px', 
+          marginRight: "0px",
+          marginLeft: "0px",
+          '& .MuiButton-endIcon': {
+            display: 'inherit',
+            marginRight: '0px',
+            marginLeft: '0px',
+          }
+        }}
       >
       </Button>
       <StyledMenu
