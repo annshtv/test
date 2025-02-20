@@ -20,8 +20,8 @@ function Navbar() {
         </span>
       </div>
       <div className="buttons">
-        <button className="b1">RECENT EPISODES</button>
-        <ButtonSubscribe>subscribe</ButtonSubscribe>
+        <button className="b1">LOG IN</button>
+        <ButtonSubscribe>REGISTRATION</ButtonSubscribe>
       </div>
     </div>
   );

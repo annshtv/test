@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import ButtonSubscribe from "../../UI/Buttons/ButtonSubscribe";
 import Navbar from "../Navbar/Navbar";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Episodes from "../../pages/Episodes";
 import About from "../../pages/About";
 
@@ -92,13 +91,7 @@ function Header() {
 
   return (
     <HeaderWrapper>
-      <Router>
       <Navbar />
-      <Routes>
-        <Route path="/episodes" element={<Episodes />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </Router>
       <div className="header">
         <h1
           dangerouslySetInnerHTML={lastWordStyling("Your Daily Podcast")}

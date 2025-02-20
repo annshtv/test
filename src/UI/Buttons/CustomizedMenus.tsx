@@ -3,11 +3,8 @@ import { styled, alpha } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Menu, { MenuProps } from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import EditIcon from '@mui/icons-material/Edit';
+import { Link } from 'react-router-dom';
 import Divider from '@mui/material/Divider';
-import ArchiveIcon from '@mui/icons-material/Archive';
-import FileCopyIcon from '@mui/icons-material/FileCopy';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import { Box } from '@mui/material';
 
@@ -99,14 +96,14 @@ export default function CustomizedMenus() {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose} disableRipple>
+        <MenuItem onClick={handleClose} component={Link} to="/podcast-detail" disableRipple>
           Podcast Detail
         </MenuItem>
-        <MenuItem onClick={handleClose} disableRipple>
+        <MenuItem onClick={handleClose} component={Link} to="/blog" disableRipple>
           Blog
         </MenuItem>
         <Divider sx={{ my: 0.5 }} />
-        <MenuItem onClick={handleClose} disableRipple>
+        <MenuItem onClick={handleClose} component={Link} to="/blog-single" disableRipple>
           Blog Single
         </MenuItem>
       </StyledMenu>
