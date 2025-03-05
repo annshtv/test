@@ -76,7 +76,8 @@ const HeaderWrapper = styled.div`
     display: flex;
     justify-content: center;
     margin-top: 120px;
-    flex-wrap: wrap;
+    overflow: hidden;
+    gap:20px
   }
 `;
 function Header() {
@@ -117,6 +118,9 @@ function Header() {
           <div className="cover5">
             <img src="pictures/cover55.png" alt="" />
           </div>
+        </div>
+        <div className="platform">
+            
         </div>
       </div>
     </HeaderWrapper>
