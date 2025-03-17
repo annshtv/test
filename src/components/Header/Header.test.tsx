@@ -54,3 +54,7 @@ describe('Header Component', () => {
     expect(navbar).toBeInTheDocument();
   });
 });
+
+function expect(subtitle: any) {
+  throw new Error('Function not implemented.');
+}

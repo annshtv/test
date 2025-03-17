@@ -77,6 +77,7 @@ const HeaderWrapper = styled.div`
     justify-content: center;
     margin-top: 120px;
     overflow:hidden;
+    gap:20px;
   }
 `;
 function Header() {
