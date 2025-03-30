@@ -70,6 +70,9 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  gap: 20px;
+  padding-top: 100px;
+  padding-left: 140px;
 }
 
 .review {
@@ -81,6 +84,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   padding-left: 40px;
+  padding-bottom: 30px;
 }
 
 .review .point {
@@ -105,4 +109,49 @@ h1 {
   flex-direction: row;
   align-items: center;
   gap: 13px;
+}
+
+.switch {
+  padding: 30px;
+  padding-left: 140px;
+}
+
+.switch {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.sliderBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.sliderBtn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.sliderBtnPrev {
+  border-color: #333;
+  color: #333;
+}
+
+.sliderBtnNext {
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+.sliderBtn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }

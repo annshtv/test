@@ -4,6 +4,8 @@ import Header from "../../components/Header/Header";
 import styles from "./Home.module.css";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import MembershipBenefits from "../../components/MembershipBenefits";
+import PodcastEpisodes from "../../components/PodcastEpisodes";
 function Home() {
   return (
     <>
@@ -84,9 +86,13 @@ function Home() {
             </div>
           </div>
         </div>
+        <div className={styles.switch}>
         <ArrowBackIosIcon/>
         <ArrowForwardIosIcon/>
+        </div>
       </div>
+      <MembershipBenefits />
+      {/* <PodcastEpisodes /> */}
     </>
   );
 }
