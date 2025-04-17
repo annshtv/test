@@ -1,124 +1,236 @@
 import ButtonSubscribe from '../UI/Buttons/ButtonSubscribe';
-import  styles from './PodcastEpisodes.module.css';
-const PodcastEpisodeCard = ({ episode }) => {
-    return (
-      <div className={styles.card}>
-        <div className={styles.imageContainer}>
-          {/* Placeholder for your images */}
-          <img 
-            src="/api/placeholder/320/180" 
-            alt={episode.title}
-            className={styles.image}
-          />
-          <div className={styles.controls}>
-            <div className={styles.dot}></div>
-            <div className={styles.dot}></div>
-            <div className={styles.dot}></div>
-          </div>
+import styles from './PodcastEpisodes.module.css';
+
+const PodcastEpisodes = () => {
+  return (
+    <div className={styles.container}>
+      <div className={styles.inner}>
+        <div className={styles.header}>
+          <h2 className={styles.title}>Recent Episodes</h2>
+          <p className={styles.subtitle}>Available on your favorite platform</p>
         </div>
         
-        <div className={styles.content}>
-          <div className={styles.episodeNumber}>{episode.episodeNumber}</div>
-          <h3 className={styles.episodeTitle}>{episode.title}</h3>
-          <p className={styles.description}>{episode.description}</p>
-          
-          <div className={styles.footer}>
-            <div className={styles.tags}>
-              {episode.tags.map((tag, index) => (
-                <span key={index} className={styles.tag}>{tag}</span>
-              ))}
+        <div className={styles.grid}>
+          <div className={styles.card}>
+            <div className={styles.imageContainer}>
+              <img 
+                src="/api/placeholder/320/180" 
+                alt="Pandemic Becoming Endemic"
+                className={styles.image}
+              />
+              <div className={styles.controls}>
+                <button className={styles.controlButton}>+</button>
+                <button className={styles.controlButton}>◯</button>
+                <button className={styles.controlButton}>⋮</button>
+              </div>
             </div>
             
-            <div className={styles.hosts}>
-              <span className={styles.hostsLabel}>Hosted by:</span>
-              <div className={styles.avatars}>
-                {episode.hosts.map((host, index) => (
-                  <div 
-                    key={index} 
-                    className={styles.avatar}
-                    style={{marginLeft: index === 0 ? 0 : '-8px'}}
-                  ></div>
-                ))}
+            <div className={styles.content}>
+              <div className={styles.episodeNumber}>Eps. 6</div>
+              <h3 className={styles.episodeTitle}>Pandemic Becoming Endemic</h3>
+              <p className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.</p>
+              
+              <div className={styles.footer}>
+                <div className={styles.tags}>
+                  <span className={styles.tag}>covid-19</span>
+                  <span className={styles.tag}>health</span>
+                </div>
+                
+                <div className={styles.hosts}>
+                  <span className={styles.hostsLabel}>Hosted by:</span>
+                  <div className={styles.avatars}>
+                    <div className={styles.avatar} style={{marginLeft: 0}}></div>
+                    <div className={styles.avatar}></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.card}>
+            <div className={styles.imageContainer}>
+              <img 
+                src="/api/placeholder/320/180" 
+                alt="Tesla Autopilot Controversy"
+                className={styles.image}
+              />
+              <div className={styles.controls}>
+                <button className={styles.controlButton}>+</button>
+                <button className={styles.controlButton}>◯</button>
+                <button className={styles.controlButton}>⋮</button>
+              </div>
+            </div>
+            
+            <div className={styles.content}>
+              <div className={styles.episodeNumber}>Eps. 5</div>
+              <h3 className={styles.episodeTitle}>Tesla Autopilot Controversy</h3>
+              <p className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.</p>
+              
+              <div className={styles.footer}>
+                <div className={styles.tags}>
+                  <span className={styles.tag}>automation</span>
+                  <span className={styles.tag}>tech</span>
+                </div>
+                
+                <div className={styles.hosts}>
+                  <span className={styles.hostsLabel}>Hosted by:</span>
+                  <div className={styles.avatars}>
+                    <div className={styles.avatar} style={{marginLeft: 0}}></div>
+                    <div className={styles.avatar}></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.card}>
+            <div className={styles.imageContainer}>
+              <img 
+                src="/api/placeholder/320/180" 
+                alt="Women's Rights? Is it alright?"
+                className={styles.image}
+              />
+              <div className={styles.controls}>
+                <button className={styles.controlButton}>+</button>
+                <button className={styles.controlButton}>◯</button>
+                <button className={styles.controlButton}>⋮</button>
+              </div>
+            </div>
+            
+            <div className={styles.content}>
+              <div className={styles.episodeNumber}>Eps. 4</div>
+              <h3 className={styles.episodeTitle}>Women's Rights? Is it alright?</h3>
+              <p className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.</p>
+              
+              <div className={styles.footer}>
+                <div className={styles.tags}>
+                  <span className={styles.tag}>women's rights</span>
+                </div>
+                
+                <div className={styles.hosts}>
+                  <span className={styles.hostsLabel}>Hosted by:</span>
+                  <div className={styles.avatars}>
+                    <div className={styles.avatar} style={{marginLeft: 0}}></div>
+                    <div className={styles.avatar}></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.card}>
+            <div className={styles.imageContainer}>
+              <img 
+                src="/api/placeholder/320/180" 
+                alt="How to Deal with Self-Confidence"
+                className={styles.image}
+              />
+              <div className={styles.controls}>
+                <button className={styles.controlButton}>+</button>
+                <button className={styles.controlButton}>◯</button>
+                <button className={styles.controlButton}>⋮</button>
+              </div>
+            </div>
+            
+            <div className={styles.content}>
+              <div className={styles.episodeNumber}>Eps. 3</div>
+              <h3 className={styles.episodeTitle}>How to Deal with Self-Confidence</h3>
+              <p className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.</p>
+              
+              <div className={styles.footer}>
+                <div className={styles.tags}>
+                  <span className={styles.tag}>self-esteem</span>
+                  <span className={styles.tag}>health</span>
+                </div>
+                
+                <div className={styles.hosts}>
+                  <span className={styles.hostsLabel}>Hosted by:</span>
+                  <div className={styles.avatars}>
+                    <div className={styles.avatar} style={{marginLeft: 0}}></div>
+                    <div className={styles.avatar}></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.card}>
+            <div className={styles.imageContainer}>
+              <img 
+                src="/api/placeholder/320/180" 
+                alt="Type of Social Classes of People"
+                className={styles.image}
+              />
+              <div className={styles.controls}>
+                <button className={styles.controlButton}>+</button>
+                <button className={styles.controlButton}>◯</button>
+                <button className={styles.controlButton}>⋮</button>
+              </div>
+            </div>
+            
+            <div className={styles.content}>
+              <div className={styles.episodeNumber}>Eps. 2</div>
+              <h3 className={styles.episodeTitle}>Type of Social Classes of People</h3>
+              <p className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              
+              <div className={styles.footer}>
+                <div className={styles.tags}>
+                  <span className={styles.tag}>social class</span>
+                  <span className={styles.tag}>wealth</span>
+                </div>
+                
+                <div className={styles.hosts}>
+                  <span className={styles.hostsLabel}>Hosted by:</span>
+                  <div className={styles.avatars}>
+                    <div className={styles.avatar} style={{marginLeft: 0}}></div>
+                    <div className={styles.avatar}></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.card}>
+            <div className={styles.imageContainer}>
+              <img 
+                src="/api/placeholder/320/180" 
+                alt="Are you a Perplexed Mind Person?"
+                className={styles.image}
+              />
+              <div className={styles.controls}>
+                <button className={styles.controlButton}>+</button>
+                <button className={styles.controlButton}>◯</button>
+                <button className={styles.controlButton}>⋮</button>
+              </div>
+            </div>
+            
+            <div className={styles.content}>
+              <div className={styles.episodeNumber}>Eps. 1</div>
+              <h3 className={styles.episodeTitle}>Are you a Perplexed Mind Person?</h3>
+              <p className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.</p>
+              
+              <div className={styles.footer}>
+                <div className={styles.tags}>
+                  <span className={styles.tag}>mind behaviour</span>
+                  <span className={styles.tag}>health</span>
+                </div>
+                
+                <div className={styles.hosts}>
+                  <span className={styles.hostsLabel}>Hosted by:</span>
+                  <div className={styles.avatars}>
+                    <div className={styles.avatar} style={{marginLeft: 0}}></div>
+                    <div className={styles.avatar}></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    );
-  };
-  
-  const PodcastEpisodes = () => {
-    const episodes = [
-      {
-        id: 6,
-        episodeNumber: 'Eps. 6',
-        title: 'Pandemic Becoming Endemic',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.',
-        tags: ['covid-19', 'health'],
-        hosts: ['host1', 'host2']
-      },
-      {
-        id: 5,
-        episodeNumber: 'Eps. 5',
-        title: 'Tesla Autopilot Controversy',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.',
-        tags: ['automation', 'tech'],
-        hosts: ['host1', 'host2']
-      },
-      {
-        id: 4,
-        episodeNumber: 'Eps. 4',
-        title: 'Women\'s Rights? Is it alright?',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.',
-        tags: ['women\'s rights'],
-        hosts: ['host1', 'host2']
-      },
-      {
-        id: 3,
-        episodeNumber: 'Eps. 3',
-        title: 'How to Deal with Self-Confidence',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.',
-        tags: ['self-esteem', 'health'],
-        hosts: ['host1', 'host2']
-      },
-      {
-        id: 2,
-        episodeNumber: 'Eps. 2',
-        title: 'Type of Social Classes of People',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        tags: ['social class', 'wealth'],
-        hosts: ['host1', 'host2']
-      },
-      {
-        id: 1,
-        episodeNumber: 'Eps. 1',
-        title: 'Are you a Perplexed mind Person?',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.',
-        tags: ['mind behaviour', 'health'],
-        hosts: ['host1', 'host2']
-      }
-    ];
-  
-    return (
-      <div className={styles.container}>
-        <div className={styles.inner}>
-          <div className={styles.header}>
-            <h2 className={styles.title}>Recent Episodes</h2>
-            <p className={styles.subtitle}>Available on your favorite platform</p>
-          </div>
-          
-          <div className={styles.grid}>
-            {episodes.map((episode) => (
-              <PodcastEpisodeCard key={episode.id} episode={episode} />
-            ))}
-          </div>
-          
-          <div className={styles.buttonContainer}>
-            <ButtonSubscribe>BROWSE ALL EPISODES</ButtonSubscribe>
-          </div>
+        
+        <div className={styles.buttonContainer}>
+          <ButtonSubscribe>BROWSE ALL EPISODES</ButtonSubscribe>
         </div>
       </div>
-    );
-  };
-  
-  export default PodcastEpisodes;;
+    </div>
+  );
+};
+
+export default PodcastEpisodes;

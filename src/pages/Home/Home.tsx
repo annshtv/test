@@ -1,14 +1,40 @@
-import React from "react";
-import ButtonSubscribe from "../../UI/Buttons/ButtonSubscribe";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import styles from "./Home.module.css";
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import MembershipBenefits from "../../components/MembershipBenefits";
 import PodcastEpisodes from "../../components/PodcastEpisodes";
+import SponsorSection from "../../components/SponsorSection";
+import News from "./News";
+import DownLoad from "../../components/DownLoad";
+
 function Home() {
+  // const [podcasts, setPodcasts] = useState([]);
+
+  // useEffect(() => {
+  //   fetch("https://radio-t.com/site-api/last/5?categories=podcast")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log("Последние 5 подкастов:", data);
+  //       setPodcasts(data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Ошибка при получении подкастов:", error);
+  //     });
+  // }, []);
+
   return (
     <>
+      {/* <div>
+        {podcasts[0] && (
+          <>
+            <img src={podcasts[3].image} />
+            <h1>{podcasts[3].audio_url
+            }</h1>
+          </>
+        )}
+      </div> */}
       <Header />
       <h1 className={styles.h1}>
         Talk. Listen. Get inspired<br></br>
@@ -87,12 +113,15 @@ function Home() {
           </div>
         </div>
         <div className={styles.switch}>
-        <ArrowBackIosIcon/>
-        <ArrowForwardIosIcon/>
+          <ArrowBackIosIcon />
+          <ArrowForwardIosIcon />
         </div>
       </div>
       <MembershipBenefits />
-      {/* <PodcastEpisodes /> */}
+      <PodcastEpisodes />
+      <SponsorSection />
+      <News />
+      <DownLoad />
     </>
   );
 }
