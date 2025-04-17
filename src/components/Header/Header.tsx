@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import ButtonSubscribe from "../../UI/Buttons/ButtonSubscribe";
 import Navbar from "../Navbar/Navbar";

@@ -8,6 +8,7 @@ import PodcastEpisodes from "../../components/PodcastEpisodes";
 import SponsorSection from "../../components/SponsorSection";
 import News from "./News";
 import DownLoad from "../../components/DownLoad";
+import Footer from "../../components/Footer";
 
 function Home() {
   // const [podcasts, setPodcasts] = useState([]);
@@ -122,6 +123,7 @@ function Home() {
       <SponsorSection />
       <News />
       <DownLoad />
+      <Footer />
     </>
   );
 }

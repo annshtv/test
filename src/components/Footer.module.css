@@ -1,0 +1,44 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    padding-top: 140px;
+}
+
+.footLinks {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #4D4D4D;
+    padding-bottom: 200px;
+    align-items: center;
+}
+
+.pages {
+    display: flex;
+    flex-direction: row;
+    gap: 93px;
+}
+
+.footInfo {
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    justify-content: space-between;
+}
+
+.links {
+    display: flex;
+    gap: 24px;
+}
+
+.second {
+    display: flex;
+    flex-direction: column;
+    gap: 30px
+}
+
+.fp {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
