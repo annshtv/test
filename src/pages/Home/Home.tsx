@@ -91,7 +91,7 @@ function Home() {
             <p>
               Lorem ipsum dolor sit amet consectet <br></br>
               piscing elit, sed do eiusmod tempor incidi <br></br> ut labore et
-              dolore magna aliqua.{" "}
+              dolore magna aliqua .{" "}
             </p>
             <div className={styles.contact}>
               <img src="pictures/avatar2.png" alt="" />
