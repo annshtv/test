@@ -1,0 +1,22 @@
+.more {
+  display: flex;
+  align-items: center;
+  gap: 5%;
+}
+.navigation {
+    background-color: #f7ede8;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.navLink {
+  text-decoration: none; 
+  color: inherit;
+}
+
+.navLink:hover {
+  color: #0056b3;
+}

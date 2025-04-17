@@ -1,0 +1,46 @@
+.download {
+    background-color: #EDF3F7;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 815px;
+    overflow: hidden;
+}
+
+
+.photo1 {
+  position: relative;
+  top: 400px;
+  left: -95px;
+}
+
+.photo2 img {
+    position: relative;
+    top: 150px;
+    right: -300px;
+}
+.text h2 {
+font-weight: 700;
+font-size: 59px;
+line-height: 120%;
+letter-spacing: -0.02em;
+text-align: center;
+color: #000;
+margin: 0px;
+}
+
+.text {
+    text-align: center;
+}
+
+.beta {
+font-weight: 700;
+font-size: 14px;
+line-height: 160%;
+color: #cd4631;
+}
+
+.first {
+    margin-bottom: 140px;
+}

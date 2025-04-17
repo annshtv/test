@@ -1,0 +1,157 @@
+.lorems {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+h1 {
+  text-align: center;
+  margin-top: 120px;
+}
+.lorem {
+  text-align: center;
+}
+
+.quote {
+  background-image: url(../../../pictures/quote.png);
+  max-width: 1267px;
+  min-height: 420px;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+
+.quote > p {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+  position: relative;
+  top: 200px;
+  text-align: center;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding-top: 230px;
+}
+
+.second {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 160%;
+  color: #000;
+}
+.feedBack {
+  background-color: #edf3f7;
+}
+
+.feedBack h2 {
+  font-weight: 700;
+  font-size: 59px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #000;
+  padding-top: 140px;
+}
+.feedBack h2 + p {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 160%;
+  text-align: center;
+  color: #4d4d4d;
+}
+
+.reviews {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 20px;
+  padding-top: 100px;
+  padding-left: 140px;
+}
+
+.review {
+  border-radius: 8px;
+  width: 570px;
+  height: 360px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 40px;
+  padding-bottom: 30px;
+}
+
+.review .point {
+  font-weight: 700;
+  font-size: 95px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  text-align: start;
+  color: #cd4631;
+  margin: 0;
+}
+
+.review > p {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 160%;
+  color: #000;
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 13px;
+}
+
+.switch {
+  padding: 30px;
+  padding-left: 140px;
+}
+
+.switch {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.sliderBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.sliderBtn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.sliderBtnPrev {
+  border-color: #333;
+  color: #333;
+}
+
+.sliderBtnNext {
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+.sliderBtn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
