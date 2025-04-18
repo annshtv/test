@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar/Navbar";
 import styled from "styled-components";
 import ButtonSubscribe from "../UI/Buttons/ButtonSubscribe";
+import Listeners from "../components/Listeners";
 
 const HeaderWrapper = styled.div`
   .header {
@@ -176,7 +177,7 @@ function About() {
           </div>
         </div>
       </HeaderWrapper>
-      
+      <Listeners/>
     </>
   );
 }
