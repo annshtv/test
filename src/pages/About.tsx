@@ -79,7 +79,6 @@ const HeaderWrapper = styled.div`
     justify-content: center;
     align-items: center;
     gap: 20px;
-    margin-bottom: 140px;
     margin-top: 70px;
   }
 

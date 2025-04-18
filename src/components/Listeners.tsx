@@ -8,23 +8,81 @@ function Listeners() {
         <p>Their experience throughout every platform</p>
         <img src="pictures/img.png" alt="" />
         <div className={styles.history}>
-        <h2>About and History</h2>
-        <div className={styles.info}>
-          <div className="info1">
-            Eu non diam phasellus vestibulum lorem. Fringilla est ullamcorper <br/>
-            eget nulla facilisi etiam dignissim. Id diam vel quam elementum<br/>
-            pulvinar. <br/><br/>Elementum eu facilisis sed odio morbi quis commodo. <br/>Sed
-            odio morbi quis commodo odio <br/> aenean sed adipiscing odio diam. uno
-            fablotoson louw uit.
-          </div>
-          <div className="info2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam<br/>
-            pellentesque at bibendum euismod tellus duis cursus dignissim odio.<br/>
-            Sit vulputate et integer in. Sit vel, senectus iaculis morbi. Amet<br/>
-            interdum imperdiet laoreet morbi tincidunt fermentum, libero. Ante
-            enim eget.<br/><br/><br/> Viverra at porttitor accumsan. Orci non here
+          <h2>About and History</h2>
+          <div className={styles.info}>
+            <div className="info1">
+              Eu non diam phasellus vestibulum lorem. Fringilla est ullamcorper{" "}
+              <br />
+              eget nulla facilisi etiam dignissim. Id diam vel quam elementum
+              <br />
+              pulvinar. <br />
+              <br />
+              Elementum eu facilisis sed odio morbi quis commodo. <br />
+              Sed odio morbi quis commodo odio <br /> aenean sed adipiscing odio
+              diam. uno fablotoson louw uit.
+            </div>
+            <div className="info2">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam
+              <br />
+              pellentesque at bibendum euismod tellus duis cursus dignissim
+              odio.
+              <br />
+              Sit vulputate et integer in. Sit vel, senectus iaculis morbi. Amet
+              <br />
+              interdum imperdiet laoreet morbi tincidunt fermentum, libero. Ante
+              enim eget.
+              <br />
+              <br />
+              <br /> Viverra at porttitor accumsan. Orci non here
+            </div>
           </div>
         </div>
+        <div className={styles.container2}>
+          <h2>Founder and Main Host</h2>
+          <div className={styles.history2}>
+            <div className={styles.info2}>
+              <div className={styles.cart}>
+                <div className={styles.pic}>
+                    <img src="pictures/man1.png" alt="" />
+                </div>
+                <div className={styles.text}>
+                <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M23.5157 51.9656C23.3251 50.761 20.3269 52.027 19.7162 50.2411C19.0942 48.4747 21.641 47.9905 22.8751 47.4781C25.0122 46.575 27.3132 45.975 29.5878 45.6464C30.4759 45.5076 32.3007 45.5969 32.4852 46.9022C32.6075 47.7286 32.4314 48.3045 30.9183 49.2552C30.1098 49.7527 29.6887 50.0307 27.9305 50.6836C27.7048 51.0745 28.0429 51.843 28.2668 52.4935C32.94 66.1111 40.3485 77.7897 52.6838 85.7194C65.0079 93.6686 78.1826 96.0368 92.2477 90.8141C93.4983 90.3634 94.9886 90.1293 95.7123 89.1919C96.2501 88.486 96.1435 87.9033 95.9426 85.8588C95.8699 85.2174 96.3455 84.0326 97.3464 83.6983C99.0203 83.1011 99.7455 84.3277 99.9137 84.8939C101.013 88.8124 101.298 92.8336 101.224 96.257C101.001 97.275 100.145 97.7191 99.4472 97.8895C98.8727 98.027 97.9179 97.4236 97.4557 96.8701C96.9183 96.221 96.7013 95.2878 96.1859 94.1042C80.2556 100.752 64.7278 99.3446 50.1891 90.2209C35.851 81.2913 26.6484 67.6648 23.5157 51.9656Z" fill="black" />
+  <path d="M89.0428 61.1568C91.9521 55.9824 97.9799 53.9377 102.503 56.5753C106.44 58.8743 107.634 64.932 105.044 69.5087C102.569 73.8396 96.4248 75.6347 92.1495 73.2445C87.8465 70.8123 86.509 65.6358 89.0428 61.1568ZM93.1311 62.7874C91.7483 65.2728 92.4023 68.0219 94.7118 69.3031C96.728 70.4151 99.7719 69.5664 100.803 67.5554C102.093 65.0949 102.256 61.8791 98.9643 60.4479C97.0924 59.6277 94.7396 59.9112 93.1311 62.7874Z" fill="#CD4631" />
+  <path d="M56.5116 37.1104C53.8319 41.6616 47.8643 43.3762 43.4357 40.8454C39.2221 38.4387 38.0239 32.7954 40.9841 28.1195C44.5958 22.3604 48.9094 22.4272 53.9464 24.7619C57.891 26.5963 58.9687 32.8998 56.5116 37.1104ZM44.8844 29.8501C43.1947 32.7316 43.5057 35.804 45.5858 37.031C47.9005 38.3934 51.3791 37.3787 52.8123 34.8964C54.1326 32.6096 53.3246 29.2243 51.1798 28.0641C48.4569 26.5963 46.4304 27.1724 44.8844 29.8501Z" fill="#81ADC8" />
+</svg>
+                    <p>Host 1</p>
+                    <h3>Porter
+                    Severus</h3>
+                    <p className={styles.lorem}>Lorem ipsum dolor sit amet con
+                    sectet piscing elit, sed do eiusmod tempor rarylet podofcast.</p>
+                    <div className={styles.socials}>
+                        <p>follow me:</p>
+                        <img src="pictures/icons.png" alt=""/>
+                    </div>
+                </div>
+              </div>
+              <div className={styles.cart}>
+              <div className={styles.pic}>
+              <img src="pictures/man2.png" alt="" />
+              </div>
+              <div className={styles.text}>
+              <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M48.5243 48.66C46.2674 47.035 44.6198 45.8389 42.9722 44.6652C36.3368 39.9031 29.6563 35.1635 23.066 30.3336C21.4861 29.1826 19.9965 27.7607 18.8906 26.1809C18.2587 25.2329 18.0556 23.5402 18.4844 22.5472C18.7327 21.9604 20.7639 21.6444 21.7344 21.9829C24.1042 22.7729 26.4063 23.8562 28.5729 25.0975C35.3212 29.002 42.0018 33.042 48.9757 37.1947C49.6077 33.042 50.1493 28.9118 50.9167 24.8267C51.5035 21.667 52.316 18.5072 53.1962 15.4152C53.7604 13.4066 54.9566 11.6687 57.3715 12.0072C59.8768 12.3458 60.6893 14.3319 60.6441 16.5663C60.5538 23.2243 60.3281 29.8597 60.1927 36.5177C60.1476 38.0975 60.1927 39.6774 60.1927 41.2573C60.441 41.4829 62.5625 39.5871 63.5556 38.6166C72.0417 30.3111 80.5278 22.0507 89.1042 13.8354C90.3004 12.6843 91.8125 11.7138 93.3472 11.0819C94.1598 10.7434 95.6945 10.9916 96.2361 11.5784C96.7778 12.1652 96.8906 13.7 96.507 14.4899C95.7847 16.002 94.7014 17.3788 93.5504 18.6201C85.9896 26.9257 78.3837 35.1861 70.8004 43.4691C69.9653 44.3718 69.1302 45.3198 67.8889 46.6965C73.5764 46.2902 78.6997 45.8388 83.8229 45.568C94.1372 45.0489 104.474 44.6201 114.788 44.1687C115.42 44.1461 116.097 44.1461 116.639 44.259C120.182 45.0038 119.866 48.5472 117.203 48.9986C113.953 49.5628 110.681 50.2625 107.385 50.601C95.5816 51.7746 83.7778 52.8128 71.974 53.9187C71.7257 53.9413 71.5 54.0316 70.7552 54.2347C74.0052 56.785 77.007 59.1322 80.0087 61.4569C85.6736 65.8805 91.4063 70.2364 96.9809 74.7503C98.4705 75.9691 99.7795 77.5715 100.727 79.2416C101.743 81.002 100.682 82.5142 98.7413 82.0402C96.3716 81.4309 93.9341 80.4604 91.9254 79.0836C82.1302 72.4031 72.4705 65.5194 62.7656 58.7034C61.6823 57.9361 60.599 57.1687 59.0191 56.0177C58.6806 61.1409 58.4097 65.7451 58.0486 70.3493C56.9653 84.0489 55.882 97.7486 54.7535 111.448C54.6181 112.96 54.3247 114.495 53.8733 115.94C53.2639 117.926 51.9097 119.235 49.7205 119.077C47.6667 118.919 46.4705 117.542 46.1094 115.601C45.7709 113.75 45.5903 111.854 45.6129 109.981C45.7483 97.7486 45.9514 85.5385 46.132 73.3059C46.1545 72.4031 46.132 71.5229 46.132 69.9656C45.0938 70.9586 44.3715 71.6132 43.6719 72.3128C35.8629 80.1218 28.0538 87.9534 20.2222 95.7625C19.342 96.6427 18.349 97.5229 17.2205 98.0194C16.4531 98.358 15.099 98.3354 14.5122 97.8614C13.9254 97.3875 13.7899 96.0559 13.7899 95.2659C13.8125 92.7833 15.1441 91.6774 16.3177 90.2555C23.224 81.8823 30.2431 73.5767 37.3073 65.3163C39.8577 62.3371 42.6337 59.5611 45.9063 56.0854C39.7899 56.785 34.4861 57.4621 29.1823 57.9586C24.0816 58.4326 18.9809 58.726 13.8577 59.0871C13.316 59.1323 12.7518 59.042 12.2552 58.9743C9.65974 58.6583 11.1268 55.9048 11.8715 55.7243C16.9948 54.4604 22.1632 53.2416 27.3542 52.2937C33.5156 51.2329 47.125 49.134 48.5243 48.66Z" fill="black" />
+</svg>
+              <p>Host 2</p>
+                    <h3>Marques
+                    Keith</h3>
+                    <p className={styles.lorem}>Lorem ipsum dolor sit amet con
+                    sectet piscing elit, sed do eiusmod tempor rarylet podofcast.</p>
+                    <div className={styles.socials}>
+                        <p>follow me:</p>
+                        <img src="pictures/icons.png" alt=""/>
+                    </div>
+              </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
