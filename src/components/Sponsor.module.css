@@ -1,0 +1,68 @@
+.sponsors {
+  background: #f7ede8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 860px;
+  overflow: hidden;
+}
+
+.sponsorCarts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  margin-left: 540px;
+}
+
+.sponsorCart {
+  border: 1.61px solid #000;
+  border-radius: 12px;
+  width: 570px;
+  height: 245px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 160%;
+  text-align: center;
+  color: #4d4d4d;
+}
+
+.sponsors h2 {
+  font-family: Montserrat Alternates, serif;
+  font-weight: 700;
+  font-size: 59px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #000;
+  margin: 0;
+}
+
+.sponsors p {
+  font-family: Montserrat Alternates, serif;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 160%;
+  text-align: center;
+  color: #4d4d4d;
+  margin-bottom: 100px;
+}
+
+.icons {
+  position: relative;
+  top: 170px;
+  right: 670px;
+  display: flex;
+  gap: 20px;
+}
