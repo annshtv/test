@@ -1,0 +1,25 @@
+.input {
+    border: 1.50px solid #000;
+    border-radius: 16px;
+    padding: 24px 0px 24px 40px;
+    width: 570px;
+    box-shadow: 6px 6px 0 0 #81adc8;
+    background: #fff;
+    position: relative;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.input::placeholder {
+font-weight: 500;
+font-size: 16px;
+line-height: 160%;
+color: #4d4d4d;
+}
+
+.search {
+    position: relative;
+    left: 40px;
+    bottom: 30px;
+}

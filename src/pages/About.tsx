@@ -6,6 +6,7 @@ import Sponsor from "../components/Sponsor";
 import Forma from "../components/Forma";
 import DownLoad from "../components/DownLoad";
 import Footer from "../components/Footer";
+import Blog from "./Blog";
 
 const HeaderWrapper = styled.div`
   .header {

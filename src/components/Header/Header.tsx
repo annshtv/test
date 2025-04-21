@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import ButtonSubscribe from "../../UI/Buttons/ButtonSubscribe";
 import Navbar from "../Navbar/Navbar";
-import Episodes from "../../pages/Episodes";
-import About from "../../pages/About";
 import styles from "./Header.module.css";
 const HeaderWrapper = styled.div`
   .header {
@@ -16,6 +14,7 @@ const HeaderWrapper = styled.div`
     display: flex;
     flex-direction: column;
     font-family: "Montserrat", sans-serif;
+    align-items: center;
   }
 
   .navigation p {
@@ -100,7 +99,7 @@ function Header() {
         <p>
           We cover all kinds of categories and <br />a weekly special guest.
         </p>
-        <ButtonSubscribe styles="kek">subscribe</ButtonSubscribe>
+        <ButtonSubscribe>SUBSCRIBE</ButtonSubscribe>
         <div className="covers">
           <div className="cover1">
             <img src="pictures/cover1.png" alt="" />
