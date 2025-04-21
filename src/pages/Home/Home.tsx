@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from "react";
+import '../../index.css'
 import Header from "../../components/Header/Header";
 import styles from "./Home.module.css";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import MembershipBenefits from "../../components/MembershipBenefits";
 import PodcastEpisodes from "../../components/PodcastEpisodes";
 import SponsorSection from "../../components/SponsorSection";
 import News from "./News";
 import DownLoad from "../../components/DownLoad";
 import Footer from "../../components/Footer";
+import NotFoundPage from "../NotFoundPage";
 
 function Home() {
   // const [podcasts, setPodcasts] = useState([]);
