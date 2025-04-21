@@ -62,7 +62,8 @@
 .icons {
   position: relative;
   top: 170px;
-  right: 670px;
+  right: 570px;
   display: flex;
   gap: 20px;
+  padding-bottom: 140px;
 }

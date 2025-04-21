@@ -1,0 +1,141 @@
+.formContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 140px;
+}
+
+.formTitle {
+  font-family: Montserrat Alternates, serif;
+  font-weight: 700;
+  font-size: 59px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #000;
+  margin: 0;
+  margin-top: 140px;
+}
+
+.formSubtitle {
+  font-family: Montserrat Alternates, serif;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 160%;
+  text-align: center;
+  color: #4d4d4d;
+  margin: 0;
+}
+
+.divider {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 30px 0;
+}
+
+.formRow {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 20px;
+}
+
+.formGroup {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.label {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 160%;
+  color: #000;
+  font-family: Montserrat Alternates, serif;
+}
+.label1 {
+    font-size: 14px;
+    line-height: 160%;
+    color: #000;
+    font-family: Montserrat Alternates, serif;
+  }
+
+.required {
+  color: #cd4631;
+}
+
+.span {
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #cd4631;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submitButton {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.submitButton:hover {
+  background-color: #2980b9;
+}
+
+.txt {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.svg1 {
+    position: relative;
+    bottom: 100px;
+    left: 180px;
+}
+.svg2 {
+    position: relative;
+    left: 750px;
+    top: 30px;
+}
+
+.svg3 {
+    position: relative;
+    top: 150px;
+    right: 400px;
+}
+@media (max-width: 768px) {
+  .formRow {
+    flex-direction: column;
+    gap: 0;
+  }
+}

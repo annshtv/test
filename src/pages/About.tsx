@@ -3,6 +3,9 @@ import styled from "styled-components";
 import ButtonSubscribe from "../UI/Buttons/ButtonSubscribe";
 import Listeners from "../components/Listeners";
 import Sponsor from "../components/Sponsor";
+import Forma from "../components/Forma";
+import DownLoad from "../components/DownLoad";
+import Footer from "../components/Footer";
 
 const HeaderWrapper = styled.div`
   .header {
@@ -158,7 +161,7 @@ function About() {
             <button className="b1">BECOME SPONSOR</button>
             <ButtonSubscribe
               children={"SUBSCRIBE"}
-              styles={undefined}
+              // styles={undefined}
             ></ButtonSubscribe>
           </div>
           <div className="carts">
@@ -179,6 +182,9 @@ function About() {
       </HeaderWrapper>
       <Listeners/>
       <Sponsor/>
+      <Forma/>
+      <DownLoad />
+      <Footer />
     </>
   );
 }
