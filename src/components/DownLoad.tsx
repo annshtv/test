@@ -9,11 +9,11 @@ function DownLoad() {
       <div className={styles.text}>
         <div className={styles.first}>
           <p className={styles.beta}>BETA</p>
-          <h2>Available now Pod of Cast App</h2>
+          <h2>Available now <br></br> Pod of Cast App</h2>
           <p>We just launched our podcast app!</p>
         </div>
         <div className={styles.second}>
-          <ButtonSubscribe styles={{ width: "30%" }}>
+          <ButtonSubscribe>
             DOWNLOAD NOW
           </ButtonSubscribe>
 

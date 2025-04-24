@@ -1,6 +1,6 @@
-import { useState } from "react";
 import styles from "./Form.module.css";
 import ButtonSubscribe from "../UI/Buttons/ButtonSubscribe";
+import { useState} from "react";
 
 function Forma() {
   const [formData, setFormData] = useState({
@@ -150,8 +150,8 @@ function Forma() {
           <path
             d="M86.3474 2C76.4722 11.0172 63.6396 29.7092 31.2177 32.9779C-0.450531 36.1705 74.6031 3.02726 97.5111 17.6517C124.289 34.7467 -8.1881 84.113 8.77193 64.9345C18.2604 54.205 106.907 33.3564 106.907 50.2606C106.907 71.7648 8.77179 104.986 2.66813 97.3922C-8.09955 83.9963 114.757 54.8902 121.001 72.7607C128.447 94.07 50.0547 119.321 35.4387 111.169C23.7459 104.647 110.256 89.7993 122 122"
             stroke="#CD4631"
-            stroke-width="2.5"
-            stroke-linecap="round"
+            strokeWidth="2.5"
+            strokeLinecap="round"
           />
         </svg>
         <div className={styles.formGroup}>

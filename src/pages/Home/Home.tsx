@@ -7,7 +7,6 @@ import SponsorSection from "../../components/SponsorSection";
 import News from "./News";
 import DownLoad from "../../components/DownLoad";
 import Footer from "../../components/Footer";
-import NotFoundPage from "../NotFoundPage";
 
 function Home() {
   // const [podcasts, setPodcasts] = useState([]);

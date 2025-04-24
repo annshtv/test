@@ -14,6 +14,7 @@ const HeaderWrapper = styled.div`
     padding: 0px;
     max-width: 100%;
     background-image: url("pictures/Header.png");
+    background-size: cover;
     margin-right: auto;
     margin-left: auto;
     display: flex;
@@ -40,7 +41,6 @@ const HeaderWrapper = styled.div`
     border: 2px solid #000;
     font-weight: bold;
     border-radius: 8px;
-    padding: 12px 10px;
     width: 188px;
     height: 41px;
     background-color: #f7ede8;

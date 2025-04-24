@@ -15,6 +15,7 @@ const HeaderWrapper = styled.div`
     flex-direction: column;
     font-family: "Montserrat", sans-serif;
     align-items: center;
+    background-size: cover;
   }
 
   .navigation p {
@@ -36,7 +37,6 @@ const HeaderWrapper = styled.div`
     border: 2px solid #000;
     font-weight: bold;
     border-radius: 8px;
-    padding: 12px 24px;
     width: 188px;
     height: 41px;
     background-color: #f7ede8;

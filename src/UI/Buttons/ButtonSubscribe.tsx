@@ -2,9 +2,10 @@ import styled from "styled-components";
 interface ButtonSubscribeProps {
   children: React.ReactNode;
   styles?: string;
+  style?: React.CSSProperties;
 }
 
-function ButtonSubscribe({ children, styles }: ButtonSubscribeProps) {
+function ButtonSubscribe({ children, styles, style }: ButtonSubscribeProps) {
   const ButtonStyled = styled.button`
     font-family: Montserrat Alternates;
     border-radius: 8px;
@@ -15,7 +16,11 @@ function ButtonSubscribe({ children, styles }: ButtonSubscribeProps) {
     font-size: 14px;
     color: #fff;
   `;
-  return <ButtonStyled className={styles} >{children}</ButtonStyled>;
+  return (
+    <ButtonStyled className={styles} style={style}>
+      {children}
+    </ButtonStyled>
+  );
 }
 
 export default ButtonSubscribe;
