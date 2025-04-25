@@ -1,4 +1,5 @@
 import DownLoad from "../components/DownLoad";
+import '../index.css'
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import PodcastCarts from "../components/PodcastCarts";

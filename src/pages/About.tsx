@@ -20,6 +20,7 @@ const HeaderWrapper = styled.div`
     display: flex;
     flex-direction: column;
     font-family: "Montserrat", sans-serif;
+    
   }
 
   .navigation p {

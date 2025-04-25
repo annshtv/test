@@ -1,4 +1,7 @@
 @import "tailwindcss";
-body {
-    background-color:#f7ede8;;
+
+img, video {
+    max-width: 100% !important;
+    height: auto;
+    display: block;
 }

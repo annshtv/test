@@ -80,6 +80,7 @@
 .pic img {
   border-radius: 25px;
   padding: 16px;
+  max-width: 290px !important;
 }
 
 .cart p {

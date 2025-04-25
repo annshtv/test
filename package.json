@@ -49,13 +49,11 @@
     "vite": "^6.0.1"
   },
   "emmet.includeLanguages": {
-  "javascript": "javascriptreact",
-  "typescript": "typescriptreact"
-},
-"emmet.syntaxProfiles": {
-  "javascript": "jsx",
-  "typescript": "jsx"
-}
-
-
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx",
+    "typescript": "jsx"
+  }
 }
