@@ -16,17 +16,12 @@ import SponsorSection from "../../components/SponsorSection";
 import News from "./News";
 import DownLoad from "../../components/DownLoad";
 import Footer from "../../components/Footer";
-// Import Swiper properly
 import { register } from 'swiper/element/bundle';
-// Import Swiper styles
 
 function Home() {
-  // Register Swiper web components
   useEffect(() => {
     register();
   }, []);
-
-  // Reference to the swiper instance
   const swiperRef = useRef(null);
 
   const handlePrevReview = () => {
@@ -126,7 +121,7 @@ function Home() {
                 </div>
               </div>
             </swiper-slide>
-            <swiper-slide class={styles.reviewSlide}>
+            <swiper-slide className={styles.reviewSlide}>
               <div className={styles.review}>
                 <p className={styles.point}>"</p>
                 <p>
@@ -141,7 +136,7 @@ function Home() {
                 </div>
               </div>
             </swiper-slide>
-            <swiper-slide class={styles.reviewSlide}>
+            <swiper-slide className={styles.reviewSlide}>
               <div className={styles.review}>
                 <p className={styles.point}>"</p>
                 <p>

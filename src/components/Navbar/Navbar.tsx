@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import ButtonSubscribe from "../../UI/Buttons/ButtonSubscribe";
 import styles from "./Navbar.module.css";
 import CustomizedMenus from "../../UI/Buttons/CustomizedMenus";
 import styled from "styled-components";
+
+import RegistrationForm from "../../UI/RegistrationForm"
+;
 
 const HeaderWrapper = styled.div`
   header {
@@ -46,11 +50,11 @@ const HeaderWrapper = styled.div`
     gap: 20px;
     display: flex;
   }
-    .menus span {
+  
+  .menus span {
     font-weight: 700;
-    font-family: Montserrat Alternates;
-font-size: 16px;
-    }
+    font-family: Montserrat Alternates; font-size: 16px;
+  }
   h1 {
     font-family: Montserrat Alternates;
     font-weight: 700;
@@ -85,7 +89,44 @@ font-size: 16px;
   }
 `;
 
+// Modal overlay styles
+const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+`;
+
+// Close button styles
+const CloseButton = styled.button`
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+  z-index: 1001;
+  
+  &:hover {
+    color: #000;
+  }
+`;
+
 function Navbar() {
+  const [showRegistration, setShowRegistration] = useState(false);
+
+  const toggleRegistration = () => {
+    setShowRegistration(!showRegistration);
+  };
+
   return (
     <HeaderWrapper>
       <div className={styles.navigation}>
@@ -106,9 +147,19 @@ function Navbar() {
         </div>
         <div className="buttons">
           <button className="b1">LOG IN</button>
-          <ButtonSubscribe>REGISTRATION</ButtonSubscribe>
+          <ButtonSubscribe onClick={toggleRegistration}>REGISTRATION</ButtonSubscribe>
         </div>
       </div>
+      
+      {/* Registration form modal */}
+      {showRegistration && (
+        <ModalOverlay>
+          <div style={{ position: 'relative', width: '100%', maxWidth: '520px' }}>
+            <CloseButton onClick={toggleRegistration}>&times;</CloseButton>
+            <RegistrationForm />
+          </div>
+        </ModalOverlay>
+      )}
     </HeaderWrapper>
   );
 }
