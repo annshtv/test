@@ -17,7 +17,7 @@
   margin-left: 540px;
 }
 
-.sponsorCart {
+swiper-slide {
   border: 1.61px solid #000;
   border-radius: 12px;
   width: 570px;
@@ -59,15 +59,15 @@
   margin-bottom: 100px;
 }
 
-.icons {
-  position: relative;
-  top: 170px;
-  right: 570px;
+.switch {
   display: flex;
-  gap: 20px;
-  padding-bottom: 140px;
+  gap: 10px;
+  align-items: center;
+  margin: 20px 0;
+  padding: 30px;
+  position: relative;
+  right: 25px;
 }
-
 .category {
   display: flex;
   justify-content: space-around;
