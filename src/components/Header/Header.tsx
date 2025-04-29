@@ -3,11 +3,11 @@ import styled from "styled-components";
 import ButtonSubscribe from "../../UI/Buttons/ButtonSubscribe";
 import Navbar from "../Navbar/Navbar";
 import styles from "./Header.module.css";
-
-// Make sure to import these in your main component if not already
-// import { register } from 'swiper/element/bundle';
-// import 'swiper/css';
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import { EffectCoverflow, Pagination } from 'swiper/modules';
 const HeaderWrapper = styled.div`
   .header {
     background-color: #f7ede8;
@@ -72,7 +72,7 @@ const HeaderWrapper = styled.div`
     color: #4d4d4d;
   }
   
-  /* Updated styles for covers section with swiper */
+
   .covers-container {
     width: 100%;
     max-width: 1200px;
@@ -126,20 +126,8 @@ function Header() {
     };
   };
   
-  // Reference to the swiper instance
+
   const coversSwiperRef = useRef(null);
-  
-  const handlePrevCover = () => {
-    if (coversSwiperRef.current && coversSwiperRef.current.swiper) {
-      coversSwiperRef.current.swiper.slidePrev();
-    }
-  };
-  
-  const handleNextCover = () => {
-    if (coversSwiperRef.current && coversSwiperRef.current.swiper) {
-      coversSwiperRef.current.swiper.slideNext();
-    }
-  };
 
   return (
     <HeaderWrapper>
@@ -153,33 +141,40 @@ function Header() {
         </p>
         <ButtonSubscribe>SUBSCRIBE</ButtonSubscribe>
         <div className="covers-container">
-          <swiper-container
-            ref={coversSwiperRef}
-            slides-per-view="3"
-            space-between="20"
-            centered-slides="true"
-            loop="true"
-            class="covers"
-            breakpoints='{"320": {"slidesPerView": 1}, "768": {"slidesPerView": 2}, "1024": {"slidesPerView": 3}}'
-          >
-            <swiper-slide class="cover-slide">
-              <img src="pictures/cover11.png" alt="Podcast Cover" />
-            </swiper-slide>
-            <swiper-slide class="cover-slide">
-              <img src="pictures/cover22.png" alt="Podcast Cover" />
-            </swiper-slide>
-            <swiper-slide class="cover-slide">
-              <img src="pictures/cover3.png" alt="Podcast Cover" />
-            </swiper-slide>
-            <swiper-slide class="cover-slide">
-              <img src="pictures/cover4.png" alt="Podcast Cover" />
-            </swiper-slide>
-            <swiper-slide class="cover-slide">
-              <img src="pictures/cover55.png" alt="Podcast Cover" />
-            </swiper-slide>
-          </swiper-container>
+        <Swiper
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={'auto'}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        pagination={true}
+        modules={[EffectCoverflow, Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <img src="pictures/cover11.png" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="pictures/cover22.png" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="pictures/cover3.png" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="pictures/cover4.png" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="pictures/cover55.png" />
+        </SwiperSlide>
+      </Swiper>
           
-          <div className="swiper-nav">
+          {/* <div className="swiper-nav">
             <div className="nav-button" onClick={handlePrevCover}>
               <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="20" cy="20" r="18" stroke="black" strokeWidth="2" fill="none"/>
@@ -192,7 +187,7 @@ function Header() {
                 <polyline points="17,13 24,20 17,27" fill="none" stroke="#D14A3C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
-          </div>
+          </div> */}
         </div>
         
         <div className={styles.platform}>

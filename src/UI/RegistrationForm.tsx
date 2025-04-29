@@ -11,7 +11,7 @@ function RegistrationForm() {
 
   const [errors, setErrors] = useState({});
 
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { name: any; value: any; type: any; checked: any; }; }) => {
     const { name, value, type, checked } = e.target;
     setFormData(prevData => ({
       ...prevData,

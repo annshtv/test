@@ -5,8 +5,7 @@ import styles from "./Navbar.module.css";
 import CustomizedMenus from "../../UI/Buttons/CustomizedMenus";
 import styled from "styled-components";
 
-import RegistrationForm from "../../UI/RegistrationForm"
-;
+import RegistrationForm from "../../UI/RegistrationForm";
 
 const HeaderWrapper = styled.div`
   header {
@@ -50,10 +49,11 @@ const HeaderWrapper = styled.div`
     gap: 20px;
     display: flex;
   }
-  
+
   .menus span {
     font-weight: 700;
-    font-family: Montserrat Alternates; font-size: 16px;
+    font-family: Montserrat Alternates;
+    font-size: 16px;
   }
   h1 {
     font-family: Montserrat Alternates;
@@ -84,12 +84,11 @@ const HeaderWrapper = styled.div`
     display: flex;
     justify-content: center;
     margin-top: 120px;
-    overflow:hidden;
-    gap:20px;
+    overflow: hidden;
+    gap: 20px;
   }
 `;
 
-// Modal overlay styles
 const ModalOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -103,7 +102,6 @@ const ModalOverlay = styled.div`
   z-index: 1000;
 `;
 
-// Close button styles
 const CloseButton = styled.button`
   position: absolute;
   top: 16px;
@@ -114,7 +112,7 @@ const CloseButton = styled.button`
   cursor: pointer;
   color: #888;
   z-index: 1001;
-  
+
   &:hover {
     color: #000;
   }
@@ -131,7 +129,13 @@ function Navbar() {
     <HeaderWrapper>
       <div className={styles.navigation}>
         <div className={styles.logo}>
-          <img src="pictures/logo.png" alt="logo" />
+          <Link to="/">
+            <img
+              src="/pictures/logo.png"
+              alt="logo"
+              className="cursor-pointer"
+            />
+          </Link>
         </div>
         <div className="menus">
           <Link to="/episodes" className={styles.navLink}>
@@ -147,14 +151,16 @@ function Navbar() {
         </div>
         <div className="buttons">
           <button className="b1">LOG IN</button>
-          <ButtonSubscribe onClick={toggleRegistration}>REGISTRATION</ButtonSubscribe>
+          <ButtonSubscribe onClick={toggleRegistration}>
+            REGISTRATION
+          </ButtonSubscribe>
         </div>
       </div>
-      
-      {/* Registration form modal */}
       {showRegistration && (
         <ModalOverlay>
-          <div style={{ position: 'relative', width: '100%', maxWidth: '520px' }}>
+          <div
+            style={{ position: "relative", width: "100%", maxWidth: "520px" }}
+          >
             <CloseButton onClick={toggleRegistration}>&times;</CloseButton>
             <RegistrationForm />
           </div>

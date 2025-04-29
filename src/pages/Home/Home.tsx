@@ -1,5 +1,6 @@
 
 import { useEffect, useRef } from 'react';
+
 declare global {
   namespace JSX {
     interface IntrinsicElements {
@@ -17,6 +18,7 @@ import News from "./News";
 import DownLoad from "../../components/DownLoad";
 import Footer from "../../components/Footer";
 import { register } from 'swiper/element/bundle';
+import AccountPage from '../AccountPage';
 
 function Home() {
   useEffect(() => {

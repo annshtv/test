@@ -29,11 +29,12 @@ function Sponsor() {
             ref={swiperRef}
             slides-per-view="auto"
             space-between="20"
-            centered-slides="true"
+            centered-slides=""
             loop={true}
             class={styles.reviews}
           >
-          <swiper-slide className={styles.sponsorCart}>
+          <swiper-slide className={styles.swiper}>
+            <div className={styles.sponsorCart}>
             <div className="logo">
             <img src="pictures/google.png" alt="" />
             </div>
@@ -42,8 +43,10 @@ function Sponsor() {
               in sed sodales in mauris molestie. Eleifend estcon sctetur
               interdum eu in auctor. Gravida leo et.
             </div>
+            </div>
           </swiper-slide>
-          <swiper-slide className={styles.sponsorCart}>
+          <swiper-slide className={styles.swiper}>
+            <div className={styles.sponsorCart}>
             <div className="logo">
             <img src="pictures/spotify.png" alt="" />
             </div>
@@ -52,8 +55,10 @@ function Sponsor() {
               in sed sodales in mauris molestie. Eleifend estcon sctetur
               interdum eu in auctor. Gravida leo et.
             </div>
+            </div>
             </swiper-slide>
-            <swiper-slide className={styles.sponsorCart}>
+            <swiper-slide className={styles.swiper}>
+            <div className={styles.sponsorCart}>
             <div className="logo">
             <img src="pictures/youtube.png" alt="" />
             </div>
@@ -61,6 +66,7 @@ function Sponsor() {
               Quis dictum cursus faucibus mattis dignissim. Pellentes que purus
               in sed sodales in mauris molestie. Eleifend estcon sctetur
               interdum eu in auctor. Gravida leo et.
+            </div>
             </div>
           </swiper-slide>
           </swiper-container>

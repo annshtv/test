@@ -5,13 +5,13 @@
   align-items: baseline;
 }
 h1 {
-font-weight: 700;
-font-size: 59px;
-line-height: 120%;
-letter-spacing: -0.02em;
-text-align: center;
-color: #000;
-padding-top: 140px;
+  font-weight: 700;
+  font-size: 59px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #000;
+  padding-top: 140px;
 }
 .lorem {
   text-align: center;
@@ -53,6 +53,11 @@ padding-top: 140px;
 }
 .feedBack {
   background-color: #edf3f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .feedBack h2 {
@@ -79,6 +84,7 @@ padding-top: 140px;
   gap: 20px;
   padding-top: 100px;
   padding-left: 140px;
+  margin-left: 25%;
 }
 
 .review {

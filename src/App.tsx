@@ -5,6 +5,8 @@ import About from './pages/About';
 import "./App.css";
 import Blog from './pages/Blog';
 import PodcastDetale from './pages/PodcastDetale';
+import NotFoundPage from './pages/NotFoundPage';
+import AccountPage from './pages/AccountPage';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/podcast-detail" element={<PodcastDetale />} />
+        <Route path="/404" element={<NotFoundPage />} />
+        <Route path="/account" element={<AccountPage />} />
       </Routes>
     </Router>
   );
