@@ -68,7 +68,7 @@ function PodcastCarts() {
 
   return (
     <>
-      <div className="flex justify-around items-center h-[72px] border-b border-black w-[80%] mx-auto">
+      <div className="flex justify-around items-center h-[72px] border-b border-black w-[100%] mx-auto">
         {categories.map((category, index) => (
           <button 
             key={index}

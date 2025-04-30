@@ -52,9 +52,43 @@
   border: 2px solid #000;
   box-shadow: 10px 10px 0 0 #81adc8;
 }
-
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
 .imageContainer {
   position: relative;
+}
+.categoryButton {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  color: #4b5563;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  position: relative;
+}
+
+.categoryButton:hover {
+  color: #CD4631;
+}
+
+.categoryButton.active {
+  color: #CD4631;
+  font-weight: 600;
+  position: relative;
+}
+
+.categoryButton.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #CD4631;
 }
 
 .image {
