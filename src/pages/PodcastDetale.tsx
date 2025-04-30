@@ -104,14 +104,7 @@ function PodcastDetale() {
           </svg>
           Latest Episode
         </h2>
-        <div className={styles.category}>
-          <p>All</p>
-          <p>Business</p>
-          <p>News</p>
-          <p>Tips & Trick</p>
-          <p>Podcast</p>
-          <p>Productivity</p>
-        </div>
+
         <PodcastCarts />
         <svg
           width="292"

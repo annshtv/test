@@ -83,7 +83,7 @@ function AccountPage() {
     }),
     subscribedPodcasts: 24,
     listenedEpisodes: 178,
-    favoriteCategories: ['Психология', 'Наука', 'Истории']
+    favoriteCategories: ['Psichology', 'Science', 'History', 'Philosophy'],
   });
   
 
@@ -143,23 +143,23 @@ function AccountPage() {
           <div className="flex-1">
             <h2 className="text-2xl font-bold">{userData.username}</h2>
             <p className="text-gray-600">{userData.email}</p>
-            <p className="text-sm text-gray-500 mt-1">На сайте с {userData.joinDate}</p>
+            <p className="text-sm text-gray-500 mt-1">With us  {userData.joinDate}</p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
               <div className="border border-gray-200 rounded-lg p-4 text-center bg-[white]">
                 <span className="text-red-500 text-2xl font-bold block">
                   {userData.subscribedPodcasts}
                 </span>
-                <span className="text-sm text-gray-600">Подписок</span>
+                <span className="text-sm text-gray-600">Subscribes</span>
               </div>
               <div className="border border-gray-200 rounded-lg p-4 text-center bg-[white]">
                 <span className="text-red-500 text-2xl font-bold block">
                   {userData.listenedEpisodes}
                 </span>
-                <span className="text-sm text-gray-600">Прослушано</span>
+                <span className="text-sm text-gray-600">Listened</span>
               </div>
               <div className="border border-gray-200 rounded-lg p-4 bg-[white]">
-                <span className="text-sm text-gray-600 block mb-2">Любимые категории:</span>
+                <span className="text-sm text-gray-600 block mb-2">Favourite category:</span>
                 <div className="flex flex-wrap gap-2">
                   {userData.favoriteCategories.map((category, index) => (
                     <span
@@ -188,10 +188,10 @@ function AccountPage() {
               onClick={() => setActiveTab(tab)}
             >
               {{
-                profile: "Профиль",
-                recent: "История",
-                favorites: "Избранное",
-                settings: "Настройки",
+                profile: "Profile",
+                recent: "History",
+                favorites: "Favourite",
+                settings: "Settings",
               }[tab]}
             </button>
           ))}
@@ -209,7 +209,7 @@ function AccountPage() {
           Talk. Listen. Get inspired
           <br />by every minute of it.
         </h3>
-        <div className="mt-8">© 2025 Pod of Cast. Все права защищены.</div>
+        <div className="mt-8">© 2025 Pod of Cast.</div>
       </footer>
     </div>
     </>
