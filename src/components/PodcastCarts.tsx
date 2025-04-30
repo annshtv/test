@@ -7,7 +7,7 @@ function PodcastCarts() {
 
   const episodes = [
     {
-      img: 'coverr1.png',
+      img: 'coverr6.png',
       alt: 'Pandemic Becoming Endemic',
       ep: 'Eps. 6',
       title: 'Pandemic Becoming Endemic',
@@ -16,7 +16,7 @@ function PodcastCarts() {
       categories: ['Health', 'News']
     },
     {
-      img: 'coverr2.png',
+      img: 'coverr5.png',
       alt: 'Tesla Autopilot Controversy',
       ep: 'Eps. 5',
       title: 'Tesla Autopilot Controversy',
@@ -25,7 +25,7 @@ function PodcastCarts() {
       categories: ['Tech', 'News']
     },
     {
-      img: 'coverr3.png',
+      img: 'coverr4.png',
       alt: "Women's Rights? Is it alright?",
       ep: 'Eps. 4',
       title: "Women's Rights? Is it alright?",
@@ -34,7 +34,7 @@ function PodcastCarts() {
       categories: ['Social Issues', 'News']
     },
     {
-      img: 'coverr4.png',
+      img: 'coverr3.png',
       alt: 'How to Deal with Self-Confidence',
       ep: 'Eps. 3',
       title: 'How to Deal with Self-Confidence',
@@ -43,7 +43,7 @@ function PodcastCarts() {
       categories: ['Health', 'Tips & Trick']
     },
     {
-      img: 'coverr5.png',
+      img: 'coverr2.png',
       alt: 'Type of Social Classes of People',
       ep: 'Eps. 2',
       title: 'Type of Social Classes of People',
@@ -52,7 +52,7 @@ function PodcastCarts() {
       categories: ['Social Issues', 'Business']
     },
     {
-      img: 'coverr6.png',
+      img: 'coverr1.png',
       alt: 'Are you a Perplexed Mind Person?',
       ep: 'Eps. 1',
       title: 'Are you a Perplexed Mind Person?',
