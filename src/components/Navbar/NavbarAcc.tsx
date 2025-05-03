@@ -1,11 +1,9 @@
-import { useState } from "react";
+
 import { Link } from "react-router-dom";
 import ButtonSubscribe from "../../UI/Buttons/ButtonSubscribe";
 import styles from "./Navbar.module.css";
 import CustomizedMenus from "../../UI/Buttons/CustomizedMenus";
 import styled from "styled-components";
-
-import RegistrationForm from "../../UI/RegistrationForm";
 
 const HeaderWrapper = styled.div`
   header {
@@ -89,42 +87,13 @@ const HeaderWrapper = styled.div`
   }
 `;
 
-const ModalOverlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-`;
-
-const CloseButton = styled.button`
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: #888;
-  z-index: 1001;
-
-  &:hover {
-    color: #000;
-  }
-`;
-
 function Navbar() {
-  const [showRegistration, setShowRegistration] = useState(false);
 
-  const toggleRegistration = () => {
-    setShowRegistration(!showRegistration);
-  };
-
+    const handleLogout = () => {
+        alert('Выход из аккаунта...');
+    
+      };
+      
   return (
     <HeaderWrapper>
       <div className={styles.navigation}>
@@ -150,22 +119,9 @@ function Navbar() {
           </span>
         </div>
         <div className="buttons">
-          <button className="b1">LOG IN</button>
-          <ButtonSubscribe onClick={toggleRegistration}>
-            REGISTRATION
-          </ButtonSubscribe>
+        <ButtonSubscribe onClick={handleLogout} children={'LOGOUT'}></ButtonSubscribe>
         </div>
       </div>
-      {showRegistration && (
-        <ModalOverlay>
-          <div
-            style={{ position: "relative", width: "100%", maxWidth: "520px" }}
-          >
-            <CloseButton onClick={toggleRegistration}>&times;</CloseButton>
-            <RegistrationForm />
-          </div>
-        </ModalOverlay>
-      )}
     </HeaderWrapper>
   );
 }

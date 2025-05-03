@@ -103,9 +103,6 @@ export default function CustomizedMenus() {
           Blog
         </MenuItem>
         <Divider sx={{ my: 0.5 }} />
-        <MenuItem onClick={handleClose} component={Link} to="/blog-single" disableRipple>
-          Blog Single
-        </MenuItem>
       </StyledMenu>
     </Box>
   );

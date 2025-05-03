@@ -1,19 +1,25 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './PodcastEpisodes.module.css';
+import useEpisodeStore from './useEpisodeStore';
 
 function PodcastCarts() {
   const categories = ["All", "Business", "News", "Tips & Trick", "Podcast", "Productivity", "Health", "Tech", "Social Issues"];
   const [activeCategory, setActiveCategory] = useState("All");
+  const navigate = useNavigate();
+  const setSelectedEpisode = useEpisodeStore((state) => state.setSelectedEpisode);
 
   const episodes = [
     {
-      img: 'coverr6.png',
+      img: 'cover.png',
       alt: 'Pandemic Becoming Endemic',
       ep: 'Eps. 6',
       title: 'Pandemic Becoming Endemic',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.',
       tags: ['covid-19', 'health'],
-      categories: ['Health', 'News']
+      categories: ['Health', 'News'],
+      host: 'Jane Doe',
+      date: 'Oct 15, 2021'
     },
     {
       img: 'coverr5.png',
@@ -22,7 +28,9 @@ function PodcastCarts() {
       title: 'Tesla Autopilot Controversy',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.',
       tags: ['automation', 'tech'],
-      categories: ['Tech', 'News']
+      categories: ['Tech', 'News'],
+      host: 'John Smith',
+      date: 'Oct 8, 2021'
     },
     {
       img: 'coverr4.png',
@@ -31,7 +39,9 @@ function PodcastCarts() {
       title: "Women's Rights? Is it alright?",
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.',
       tags: ["women's rights"],
-      categories: ['Social Issues', 'News']
+      categories: ['Social Issues', 'News'],
+      host: 'Sarah Johnson',
+      date: 'Oct 1, 2021'
     },
     {
       img: 'coverr3.png',
@@ -40,7 +50,9 @@ function PodcastCarts() {
       title: 'How to Deal with Self-Confidence',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.',
       tags: ['self-esteem', 'health'],
-      categories: ['Health', 'Tips & Trick']
+      categories: ['Health', 'Tips & Trick'],
+      host: 'Alex Williams',
+      date: 'Sep 24, 2021'
     },
     {
       img: 'coverr2.png',
@@ -49,7 +61,9 @@ function PodcastCarts() {
       title: 'Type of Social Classes of People',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       tags: ['social class', 'wealth'],
-      categories: ['Social Issues', 'Business']
+      categories: ['Social Issues', 'Business'],
+      host: 'Michael Brown',
+      date: 'Sep 17, 2021'
     },
     {
       img: 'coverr1.png',
@@ -58,13 +72,19 @@ function PodcastCarts() {
       title: 'Are you a Perplexed Mind Person?',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio.',
       tags: ['mind behaviour', 'health'],
-      categories: ['Health', 'Productivity']
+      categories: ['Health', 'Productivity'],
+      host: 'Jane Doe',
+      date: 'Sep 22, 2021'
     },
   ];
 
   const filteredEpisodes = activeCategory === "All" 
     ? episodes 
     : episodes.filter(ep => ep.categories.includes(activeCategory));
+  const handleEpisodeClick = (episode) => {
+    setSelectedEpisode(episode);
+    navigate('/podcast-detail');
+  };
 
   return (
     <>
@@ -82,7 +102,11 @@ function PodcastCarts() {
       
       <div className={styles.grid}>
         {filteredEpisodes.map((ep, idx) => (
-          <div className={styles.card} key={idx}>
+          <div 
+            className={`${styles.card} cursor-pointer hover:shadow-lg transition-shadow duration-300`} 
+            key={idx}
+            onClick={() => handleEpisodeClick(ep)}
+          >
             <div className={styles.content}>
               <img
                 src={`pictures/${ep.img}`}

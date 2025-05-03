@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar/Navbar";
 import { useState } from "react";
 import ButtonSubscribe from "../UI/Buttons/ButtonSubscribe";
 import '../App.css';
+import NavbarAcc from "../components/Navbar/NavbarAcc";
 
 const HeaderWrapper = styled.div`
 
@@ -99,12 +100,6 @@ function AccountPage() {
     { id: 2, title: 'Perplexed mind', episode: 'Загадки сознания', date: '20 апреля 2025', duration: '42 мин' },
   ];
   
-
-  const handleLogout = () => {
-    alert('Выход из аккаунта...');
-
-  };
-  
   const lastWordStyling = (text: string) => {
     const words = text.split(" ");
     const lastWord = words.pop();
@@ -118,7 +113,7 @@ function AccountPage() {
   return (
     <>
        <div className="bg-[#f7ede8] min-h-screen text-black font-sans">
-      <Navbar />
+      <NavbarAcc />
 
       <div className="text-center py-16 px-4">
         <h1
@@ -132,7 +127,7 @@ function AccountPage() {
 
       <div className="bg-[#f7ede8] rounded-lg px-6 md:px-12 py-8 mb-10 relative fon">
         <div className="absolute top-4 right-6">
-          <ButtonSubscribe onClick={handleLogout} children={'LOGOUT'}></ButtonSubscribe>
+    
         </div>
 
         <div className="flex flex-col md:flex-row items-start gap-8">

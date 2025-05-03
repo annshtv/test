@@ -3,54 +3,54 @@ import '../index.css'
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import PodcastCarts from "../components/PodcastCarts";
-import styles from "../components/Sponsor.module.css";
 import ButtonSubscribe from "../UI/Buttons/ButtonSubscribe";
+import useEpisodeStore from '../components/useEpisodeStore';
+
 function PodcastDetale() {
+  const selectedEpisode = useEpisodeStore((state) => state.selectedEpisode);
+
   return (
     <>
       <Navbar />
-      <div className="flex justify-center  gap-[118px] bg-[#f7ede8;] pt-[100px] pb-[40px] bg-[url('pictures/Episode.png')] bg-cover bg-center">
+      <div className="flex justify-center gap-[118px] bg-[#f7ede8;] pt-[100px] pb-[40px] bg-[url('pictures/Episode.png')] bg-cover bg-center">
         <div className="">
-          <img src="pictures/coverr1.png" alt="" />
+          <img src={`pictures/${selectedEpisode.img}`} alt={selectedEpisode.alt} />
           <div className="flex justify-around items-center flex-row mt-[80px]">
             <p className="font-bold text-[14px] leading-[160%] text-[#4d4d4d]">
               Tags:
             </p>
             <div className="flex gap-[10px]">
-              <p className="border border-[#4d4d4d] rounded-[4px]  py-[6px]  p-[5px] h-[34px] font-medium text-[14px] leading-[160%] text-[#4d4d4d]">
-                mind-behaviour
-              </p>
-              <p className="border border-[#4d4d4d] rounded-[4px]  py-[6px] p-[5px] h-[34px] font-medium text-[14px] leading-[160%] text-[#4d4d4d]">
-                health
-              </p>
+              {selectedEpisode.tags.map((tag, index) => (
+                <p key={index} className="border border-[#4d4d4d] rounded-[4px] py-[6px] p-[5px] h-[34px] font-medium text-[14px] leading-[160%] text-[#4d4d4d]">
+                  {tag}
+                </p>
+              ))}
             </div>
           </div>
         </div>
         <div className="flex flex-col gap-[25px]">
           <div className="flex justify-between">
             <p className="font-bold text-[16px] leading-[160%] text-[#cd4631]">
-              Episode 1
+              {selectedEpisode.ep}
             </p>
-            <p className="font-bold text-[12px] leading-[160%] text-[#cd4631] border border-[#cd4631] rounded-[4px] px-[6px] py-[3px] w-[150px] h-[25px]">
-              FEATURED EPISODE
-            </p>
+            {selectedEpisode.ep === 'Eps. 1' && (
+              <p className="font-bold text-[12px] leading-[160%] text-[#cd4631] border border-[#cd4631] rounded-[4px] px-[6px] py-[3px] w-[150px] h-[25px]">
+                FEATURED EPISODE
+              </p>
+            )}
           </div>
           <h2 className="font-bold text-[36px] leading-[100%] tracking-[-0.02em] text-black">
-            Are you a Perplexed Mind Person?
+            {selectedEpisode.title}
           </h2>
           <p className="font-medium text-[16px] leading-[160%] text-[#4d4d4d]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod{" "}
-            <br />
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim{" "}
-            <br />
-            veniam, quis nostrud.
+            {selectedEpisode.desc}
           </p>
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-[10px]">
               <img src="pictures/avatarka.png" alt="" />
-              <p>Hosted by: Jane Doe</p>
+              <p>Hosted by: {selectedEpisode.host}</p>
             </div>
-            <div>Sep 22, 2021</div>
+            <div>{selectedEpisode.date}</div>
           </div>
           <div className="flex gap-[20px] ">
             <ButtonSubscribe
@@ -58,8 +58,7 @@ function PodcastDetale() {
               style={{ width: "160px", height: "62px" }}
             ></ButtonSubscribe>
             <button
-              className=" flex justify-center items-baseline
- border-2 border-black rounded-lg px-9 py-5 w-[268px] h-[64px] shadow-[6px_6px_0_0_rgba(0,0,0,0.25)] bg-[rgba(255,255,255,0.01)]"
+              className="flex justify-center items-baseline border-2 border-black rounded-lg px-9 py-5 w-[268px] h-[64px] shadow-[6px_6px_0_0_rgba(0,0,0,0.25)] bg-[rgba(255,255,255,0.01)]"
             >
               <svg
                 width="11"
@@ -67,10 +66,11 @@ function PodcastDetale() {
                 viewBox="0 0 11 15"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                className="mr-2"
               >
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M11 7.48867C11 5.59603 1.85356 -0.458727 0.816006 0.629958C-0.221548 1.71864 -0.321313 13.1561 0.816006 14.3474C1.95333 15.5428 11 9.38131 11 7.48867Z"
                   fill="black"
                 />
