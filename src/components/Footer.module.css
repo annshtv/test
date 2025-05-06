@@ -42,3 +42,12 @@
     flex-direction: column;
     gap: 20px;
 }
+
+@media screen and (max-width:375px) {
+    .footLinks {
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+    }
+  }

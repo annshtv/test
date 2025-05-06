@@ -17,6 +17,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/podcast-detail" element={<PodcastDetale />} />
+        {/* <Route path="/podcast/:Id" element={<Team />} /> */}
         <Route path="/404" element={<NotFoundPage />} />
         <Route path="/account" element={<AccountPage />} />
       </Routes>

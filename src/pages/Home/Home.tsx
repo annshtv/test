@@ -1,14 +1,8 @@
-
-import { useEffect, useRef } from 'react';
-
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'swiper-container': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
-      'swiper-slide': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
-    }
-  }
-}
+import { useEffect, useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
 import Header from "../../components/Header/Header";
 import styles from "./Home.module.css";
 import MembershipBenefits from "../../components/MembershipBenefits";
@@ -17,25 +11,15 @@ import SponsorSection from "../../components/SponsorSection";
 import News from "./News";
 import DownLoad from "../../components/DownLoad";
 import Footer from "../../components/Footer";
-import { register } from 'swiper/element/bundle';
-import AccountPage from '../AccountPage';
+import { register } from "swiper/element/bundle";
+import AccountPage from "../AccountPage";
 
 function Home() {
-  useEffect(() => {
-    register();
-  }, []);
-  const swiperRef = useRef(null);
-
-  const handlePrevReview = () => {
-    if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slidePrev();
-    }
-  };
-
-  const handleNextReview = () => {
-    if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slideNext();
-    }
+  const pagination = {
+    clickable: true,
+    renderBullet: function (index: number, className: string) {
+      return '<span class="' + className + '">' + (index + 1) + "</span>";
+    },
   };
 
   // Commented fetch code remains the same
@@ -100,21 +84,33 @@ function Home() {
         <h2>What our listeners say</h2>
         <p>Their experience throughout every platform</p>
         <div className={styles.reviewsContainer}>
-          <swiper-container
-            ref={swiperRef}
-            slides-per-view="auto"
-            space-between="20"
-            centered-slides="true"
+          <Swiper
+            pagination={{
+              clickable: true,
+              renderBullet: function (index, className) {
+                return (
+                  '<span class="' + className + '">' + (index + 1) + "</span>"
+                );
+              },
+            }}
+            modules={[Pagination]}
+            className="mySwiper"
+            slidesPerView={1}
+            spaceBetween={30}
             loop={true}
-            class={styles.reviews}
+            speed={500}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
           >
-            <swiper-slide className={styles.reviewSlide}>
+            <SwiperSlide className={styles.reviewSlide}>
               <div className={styles.review}>
                 <p className={styles.point}>"</p>
                 <p>
                   Lorem ipsum dolor sit amet consectet <br></br>
-                  piscing elit, sed do eiusmod tempor incidi <br></br> ut labore et
-                  dolore magna aliqua.{" "}
+                  piscing elit, sed do eiusmod tempor incidi <br></br> ut labore
+                  et dolore magna aliqua.{" "}
                 </p>
                 <div className={styles.contact}>
                   <img src="pictures/avatar1.png" alt="" />
@@ -122,14 +118,14 @@ function Home() {
                   <img src="pictures/platform.png" alt="" />
                 </div>
               </div>
-            </swiper-slide>
-            <swiper-slide className={styles.reviewSlide}>
+            </SwiperSlide>
+            <SwiperSlide className={styles.reviewSlide}>
               <div className={styles.review}>
                 <p className={styles.point}>"</p>
                 <p>
                   Lorem ipsum dolor sit amet consectet <br></br>
-                  piscing elit, sed do eiusmod tempor incidi <br></br> ut labore et
-                  dolore magna aliqua .{" "}
+                  piscing elit, sed do eiusmod tempor incidi <br></br> ut labore
+                  et dolore magna aliqua .{" "}
                 </p>
                 <div className={styles.contact}>
                   <img src="pictures/avatar2.png" alt="" />
@@ -137,14 +133,14 @@ function Home() {
                   <img src="pictures/platform2.png" alt="" />
                 </div>
               </div>
-            </swiper-slide>
-            <swiper-slide className={styles.reviewSlide}>
+            </SwiperSlide>
+            <SwiperSlide className={styles.reviewSlide}>
               <div className={styles.review}>
                 <p className={styles.point}>"</p>
                 <p>
                   Lorem ipsum dolor sit amet consectet <br></br>
-                  piscing elit, sed do eiusmod tempor incidi <br></br> ut labore et
-                  dolore magna aliqua.{" "}
+                  piscing elit, sed do eiusmod tempor incidi <br></br> ut labore
+                  et dolore magna aliqua.{" "}
                 </p>
                 <div className={styles.contact}>
                   <img src="pictures/avatar3.png" alt="" />
@@ -152,27 +148,12 @@ function Home() {
                   <img src="pictures/platform3.png" alt="" />
                 </div>
               </div>
-            </swiper-slide>
-          </swiper-container>
-        </div>
-        
-        <div className={styles.switch}>
-          <div className={styles.navButton} onClick={handlePrevReview}>
-            <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="20" cy="20" r="18" stroke="black" strokeWidth="2" fill="none"/>
-              <polyline points="23,13 16,20 23,27" fill="none" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </div>
-          <div className={styles.navButton} onClick={handleNextReview}>
-            <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="20" cy="20" r="18" stroke="#D14A3C" strokeWidth="2" fill="none"/>
-              <polyline points="17,13 24,20 17,27" fill="none" stroke="#D14A3C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </div>
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
-      <MembershipBenefits />
       <PodcastEpisodes />
+      <MembershipBenefits />
       <SponsorSection />
       <News />
       <DownLoad />

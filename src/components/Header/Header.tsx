@@ -12,7 +12,7 @@ const HeaderWrapper = styled.div`
   .header {
     background-color: #f7ede8;
     padding: 0px;
-    min-height: 1448px;
+    height: 100%;
     max-width: 100%;
     background-image: url("pictures/Header.png");
     margin-right: auto;
@@ -22,6 +22,7 @@ const HeaderWrapper = styled.div`
     font-family: "Montserrat", sans-serif;
     align-items: center;
     background-size: cover;
+    padding-bottom: 100px;
   }
 
   .navigation p {
@@ -54,7 +55,7 @@ const HeaderWrapper = styled.div`
   h1 {
     font-family: Montserrat Alternates;
     font-weight: 700;
-    font-size: 96px;
+    font-size: 76px;
     line-height: 100%;
     letter-spacing: -0.04em;
     text-align: center;

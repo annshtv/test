@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './PodcastEpisodes.module.css';
-import useEpisodeStore from './useEpisodeStore';
+import useEpisodeStore, { EpisodeStoreState } from './useEpisodeStore';
 
 function PodcastCarts() {
-  const categories = ["All", "Business", "News", "Tips & Trick", "Podcast", "Productivity", "Health", "Tech", "Social Issues"];
+  const categories = ["All", "Business", "News", "Tips & Trick", "Productivity", "Health", "Tech", "Social Issues"];
   const [activeCategory, setActiveCategory] = useState("All");
   const navigate = useNavigate();
-  const setSelectedEpisode = useEpisodeStore((state) => state.setSelectedEpisode);
+  const setSelectedEpisode = useEpisodeStore((state: EpisodeStoreState) => state.setSelectedEpisode);
 
   const episodes = [
     {
@@ -88,7 +88,7 @@ function PodcastCarts() {
 
   return (
     <>
-      <div className="flex justify-around items-center h-[72px] border-b border-black w-[100%] mx-auto">
+      <div className="flex justify-around items-center h-[72px] border-b border-black w-[100%] mx-auto flex-wrap">
         {categories.map((category, index) => (
           <button 
             key={index}

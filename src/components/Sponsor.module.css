@@ -40,6 +40,7 @@
   text-align: center;
   color: #000;
   margin: 0;
+  
 }
 
 .sponsors p {
@@ -77,6 +78,7 @@
   letter-spacing: -0.02em;
   text-align: center;
   color: #000;
+  padding-top: 100px;
 }
 
 .cards {

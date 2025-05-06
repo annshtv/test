@@ -47,10 +47,6 @@ function News() {
             </div>
           </div>
         </div>
-        <ButtonSubscribe
-          children={"BROWSE ALL"}
-          styles={styles.button}
-        ></ButtonSubscribe>
       </div>
     </>
   );

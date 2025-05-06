@@ -6,6 +6,7 @@ import CustomizedMenus from "../../UI/Buttons/CustomizedMenus";
 import styled from "styled-components";
 
 import RegistrationForm from "../../UI/RegistrationForm";
+import LoginForm from "../../UI/LoginForm";
 
 const HeaderWrapper = styled.div`
   header {
@@ -125,6 +126,12 @@ function Navbar() {
     setShowRegistration(!showRegistration);
   };
 
+  const [showLogIn, setShowLogIn] = useState(false);
+
+  const toggleLogIn = () => {
+    setShowLogIn(!showLogIn);
+  };
+
   return (
     <HeaderWrapper>
       <div className={styles.navigation}>
@@ -150,7 +157,7 @@ function Navbar() {
           </span>
         </div>
         <div className="buttons">
-          <button className="b1">LOG IN</button>
+          <button className="b1" onClick={toggleLogIn}>LOG IN</button>
           <ButtonSubscribe onClick={toggleRegistration}>
             REGISTRATION
           </ButtonSubscribe>
@@ -163,6 +170,16 @@ function Navbar() {
           >
             <CloseButton onClick={toggleRegistration}>&times;</CloseButton>
             <RegistrationForm />
+          </div>
+        </ModalOverlay>
+      )}
+      {showLogIn && (
+        <ModalOverlay>
+          <div
+            style={{ position: "relative", width: "100%", maxWidth: "520px" }}
+          >
+            <CloseButton onClick={toggleLogIn}>&times;</CloseButton>
+            <LoginForm />
           </div>
         </ModalOverlay>
       )}
