@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import DownLoad from "../components/DownLoad";
 import '../index.css'
 import Footer from "../components/Footer";
@@ -9,6 +10,54 @@ import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, Key } from
 
 function PodcastDetale() {
   const selectedEpisode = useEpisodeStore((state) => state.selectedEpisode);
+  const [podcasts, setPodcasts] = useState([]);
+  const [audioUrl, setAudioUrl] = useState("");
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    fetch("https://radio-t.com/site-api/last/5?categories=podcast")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Последние 5 подкастов:", data);
+        setPodcasts(data);
+      })
+      .catch((error) => {
+        console.error("Ошибка при получении подкастов:", error);
+      });
+  }, []);
+
+  const playRandomPodcast = () => {
+    if (podcasts.length === 0) {
+      console.error("Список подкастов пуст");
+      return;
+    }
+    const randomIndex = Math.floor(Math.random() * podcasts.length);
+    const randomPodcast = podcasts[randomIndex];
+    
+    if (randomPodcast && randomPodcast.audio_url && randomPodcast.audio_url) {
+      const podcastUrl = randomPodcast.audio_url;
+      console.log("Воспроизведение подкаста:", randomPodcast.title);
+      if (isPlaying) {
+        const audioElement = document.getElementById("podcast-audio");
+        if (audioElement) {
+          audioElement.pause();
+        }
+      }
+      setAudioUrl(podcastUrl);
+      setIsPlaying(true);
+
+      setTimeout(() => {
+        const audioElement = document.getElementById("podcast-audio");
+        if (audioElement) {
+          audioElement.play().catch((err: unknown) => {
+            console.error("Ошибка воспроизведения:", err);
+          });
+        }
+      }, 100);
+    } else {
+      console.error("У выбранного подкаста нет URL аудио");
+    }
+  };
 
   return (
     <>
@@ -21,7 +70,7 @@ function PodcastDetale() {
               Tags:
             </p>
             <div className="flex gap-[10px]">
-              {selectedEpisode.tags.map((tag: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined, index: Key | null | undefined) => (
+              {selectedEpisode.tags.map((tag: string | number | boolean | ReactElement<unknown, string | JSXElementConstructor<unknown>> | Iterable<ReactNode> | ReactPortal | null | undefined, index: Key | null | undefined) => (
                 <p key={index} className="border border-[#4d4d4d] rounded-[4px] py-[6px] p-[5px] h-[34px] font-medium text-[14px] leading-[160%] text-[#4d4d4d]">
                   {tag}
                 </p>
@@ -60,6 +109,7 @@ function PodcastDetale() {
             ></ButtonSubscribe>
             <button
               className="flex justify-center items-baseline border-2 border-black rounded-lg py-5 w-[268px] h-[64px] shadow-[6px_6px_0_0_rgba(0,0,0,0.25)] bg-[rgba(255,255,255,0.01)]"
+              onClick={playRandomPodcast}
             >
               <svg
                 width="11"
@@ -79,6 +129,15 @@ function PodcastDetale() {
               LISTEN NOW (46 min)
             </button>
           </div>
+          {audioUrl && (
+            <audio 
+              id="podcast-audio" 
+              src={audioUrl} 
+              controls={isPlaying} 
+              className={isPlaying ? "mt-4 w-full color-#81ADC8" : "hidden"}
+              onEnded={() => setIsPlaying(false)}
+            />
+          )}
         </div>
       </div>
       <div className="pb-[140px] max-w-[1200px] mx-auto">

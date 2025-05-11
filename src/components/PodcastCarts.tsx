@@ -84,6 +84,7 @@ function PodcastCarts() {
   const handleEpisodeClick = (episode) => {
     setSelectedEpisode(episode);
     navigate('/podcast-detail');
+    window.scrollTo(0, 0);
   };
 
   return (

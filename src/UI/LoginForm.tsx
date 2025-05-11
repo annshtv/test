@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function LoginForm() {
   const [formData, setFormData] = useState({
@@ -9,12 +9,42 @@ function LoginForm() {
 
   const [errors, setErrors] = useState({});
 
+  useEffect(() => {
+    const savedData = localStorage.getItem('loginFormData');
+    if (savedData) {
+      try {
+        const parsedData = JSON.parse(savedData);
+        
+        if (parsedData && parsedData.rememberMe) {
+          setFormData(parsedData);
+        }
+      } catch (error) {
+        console.error('Ошибка при загрузке данных из localStorage:', error);
+  
+        localStorage.removeItem('loginFormData');
+      }
+    }
+  }, []);
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData(prevData => ({
-      ...prevData,
-      [name]: type === 'checkbox' ? checked : value
-    }));
+    const newValue = type === 'checkbox' ? checked : value;
+    
+    setFormData(prevData => {
+      const updatedData = {
+        ...prevData,
+        [name]: newValue
+      };
+      if (name === 'rememberMe' && !checked) {
+        localStorage.removeItem('loginFormData');
+      }
+      
+      if (updatedData.rememberMe) {
+        localStorage.setItem('loginFormData', JSON.stringify(updatedData));
+      }
+      
+      return updatedData;
+    });
   };
 
   const validate = () => {
@@ -33,7 +63,7 @@ function LoginForm() {
     return newErrors;
   };
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const validationErrors = validate();
     
@@ -41,9 +71,24 @@ function LoginForm() {
       setErrors(validationErrors);
       return;
     }
+
+    if (formData.rememberMe) {
+      localStorage.setItem('loginFormData', JSON.stringify(formData));
+    } else {
+      localStorage.removeItem('loginFormData');
+    }
     
     setErrors({});
     alert('Login successful!');
+  };
+
+  const clearSavedData = () => {
+    localStorage.removeItem('loginFormData');
+    setFormData({
+      email: '',
+      password: '',
+      rememberMe: false
+    });
   };
 
   return (
@@ -104,7 +149,13 @@ function LoginForm() {
                 </label>
               </div>
             </div>
-            <button className="text-sm text-red-500 hover:underline font-sans">Forget your password?</button>
+            <button 
+              type="button" 
+              onClick={clearSavedData} 
+              className="text-sm text-red-500 hover:underline font-sans"
+            >
+              Forget your password?
+            </button>
           </div>
           
           <button

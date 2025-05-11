@@ -1,8 +1,13 @@
 import { useEffect, useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+
+// import required modules
+import { Pagination } from 'swiper/modules';
 import Header from "../../components/Header/Header";
 import styles from "./Home.module.css";
 import MembershipBenefits from "../../components/MembershipBenefits";
@@ -15,38 +20,15 @@ import { register } from "swiper/element/bundle";
 import AccountPage from "../AccountPage";
 
 function Home() {
-  const pagination = {
-    clickable: true,
-    renderBullet: function (index: number, className: string) {
-      return '<span class="' + className + '">' + (index + 1) + "</span>";
-    },
-  };
-
-  // Commented fetch code remains the same
-  // const [podcasts, setPodcasts] = useState([]);
-  // useEffect(() => {
-  //   fetch("https://radio-t.com/site-api/last/5?categories=podcast")
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log("Последние 5 подкастов:", data);
-  //       setPodcasts(data);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Ошибка при получении подкастов:", error);
-  //     });
-  // }, []);
+  // const pagination = {
+  //   clickable: true,
+  //   renderBullet: function (index: number, className: string) {
+  //     return '<span class="' + className + '">' + (index + 1) + "</span>";
+  //   },
+  // };
 
   return (
     <>
-      {/* <div>
-        {podcasts[0] && (
-          <>
-            <img src={podcasts[3].image} />
-            <h1>{podcasts[3].audio_url
-            }</h1>
-          </>
-        )}
-      </div> */}
       <Header />
       <h1 className={styles.h1}>
         Talk. Listen. Get inspired<br></br>
@@ -83,27 +65,8 @@ function Home() {
       <div className={styles.feedBack}>
         <h2>What our listeners say</h2>
         <p>Their experience throughout every platform</p>
-        <div className={styles.reviewsContainer}>
-          <Swiper
-            pagination={{
-              clickable: true,
-              renderBullet: function (index, className) {
-                return (
-                  '<span class="' + className + '">' + (index + 1) + "</span>"
-                );
-              },
-            }}
-            modules={[Pagination]}
-            className="mySwiper"
-            slidesPerView={1}
-            spaceBetween={30}
-            loop={true}
-            speed={500}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-          >
+        <div className={styles.reviews}>
+      
             <SwiperSlide className={styles.reviewSlide}>
               <div className={styles.review}>
                 <p className={styles.point}>"</p>
@@ -149,7 +112,7 @@ function Home() {
                 </div>
               </div>
             </SwiperSlide>
-          </Swiper>
+       
         </div>
       </div>
       <PodcastEpisodes />
