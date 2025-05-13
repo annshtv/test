@@ -1,9 +1,10 @@
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ButtonSubscribe from "../../UI/Buttons/ButtonSubscribe";
 import styles from "./Navbar.module.css";
 import CustomizedMenus from "../../UI/Buttons/CustomizedMenus";
 import styled from "styled-components";
+import { useAuth } from "../../context/AuthContext";
 
 const HeaderWrapper = styled.div`
   header {
@@ -88,10 +89,12 @@ const HeaderWrapper = styled.div`
 `;
 
 function Navbar() {
-
-    const handleLogout = () => {
-        alert('Выход из аккаунта...');
+      const navigate = useNavigate();
+      const { logout, user } = useAuth();
     
+      const handleLogout = () => {
+        logout();
+        navigate('/'); 
       };
       
   return (

@@ -3,6 +3,11 @@ import ButtonSubscribe from '../UI/Buttons/ButtonSubscribe';
 import styles from './SponsorSection.module.css';
 
 const SponsorSection = () => {
+
+  const subscribe = () => {
+    alert('We sent you an email with the subscription link!');
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -19,7 +24,7 @@ const SponsorSection = () => {
             </p>
             
             <div className={styles.subscribeRow}>
-              <ButtonSubscribe>SUBSCRIBE</ButtonSubscribe>
+              <ButtonSubscribe onClick={subscribe}>SUBSCRIBE</ButtonSubscribe>
               <div className={styles.priceContainer}>
                 <span className={styles.price}>$9.99</span>
                 <span className={styles.period}>/month</span>
@@ -38,7 +43,7 @@ const SponsorSection = () => {
             </p>
             
             <div className={styles.subscribeRow}>
-            <ButtonSubscribe>SUBSCRIBE</ButtonSubscribe>
+            <ButtonSubscribe onClick={subscribe}>SUBSCRIBE</ButtonSubscribe>
               <div className={styles.priceContainer}>
                 <span className={styles.price}>$14.99</span>
                 <span className={styles.period}>/month</span>
@@ -54,7 +59,7 @@ const SponsorSection = () => {
             </p>
             
             <div className={styles.subscribeRow}>
-            <ButtonSubscribe>SUBSCRIBE</ButtonSubscribe>
+            <ButtonSubscribe onClick={subscribe}>SUBSCRIBE</ButtonSubscribe>
               <div className={styles.priceContainer}>
                 <span className={styles.price}>$29.99</span>
                 <span className={styles.period}>/month</span>

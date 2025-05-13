@@ -126,7 +126,7 @@ function PodcastDetale() {
                   fill="black"
                 />
               </svg>
-              LISTEN NOW (46 min)
+              LISTEN NOW
             </button>
           </div>
           {audioUrl && (

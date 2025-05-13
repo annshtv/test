@@ -129,6 +129,12 @@ function Header() {
   
 
   const coversSwiperRef = useRef(null);
+  const scroll = () => {
+    window.scrollTo({
+      top: 5400,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <HeaderWrapper>
@@ -140,7 +146,7 @@ function Header() {
         <p>
           We cover all kinds of categories and <br />a weekly special guest.
         </p>
-        <ButtonSubscribe>SUBSCRIBE</ButtonSubscribe>
+        <ButtonSubscribe onClick={scroll}>SUBSCRIBE</ButtonSubscribe>
         <div className="covers-container">
         <Swiper
         effect={'coverflow'}

@@ -1,13 +1,36 @@
-import { useState, useEffect } from 'react';
+
+import { useState, useEffect, FormEvent, ChangeEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+
+interface FormData {
+  email: string;
+  password: string;
+  rememberMe: boolean;
+}
+
+interface Errors {
+  email?: string;
+  password?: string;
+}
 
 function LoginForm() {
-  const [formData, setFormData] = useState({
+  const navigate = useNavigate();
+  const { login, isAuthenticated } = useAuth();
+
+  const [formData, setFormData] = useState<FormData>({
     email: '',
     password: '',
     rememberMe: false
   });
 
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<Errors>({});
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/account');
+    }
+  }, [isAuthenticated, navigate]);
 
   useEffect(() => {
     const savedData = localStorage.getItem('loginFormData');
@@ -26,7 +49,7 @@ function LoginForm() {
     }
   }, []);
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
     const newValue = type === 'checkbox' ? checked : value;
     
@@ -47,8 +70,8 @@ function LoginForm() {
     });
   };
 
-  const validate = () => {
-    const newErrors = {};
+  const validate = (): Errors => {
+    const newErrors: Errors = {};
     
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
@@ -63,7 +86,7 @@ function LoginForm() {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const validationErrors = validate();
     
@@ -79,7 +102,17 @@ function LoginForm() {
     }
     
     setErrors({});
-    alert('Login successful!');
+    const userData = {
+      username: 'PodcastLover',
+      email: formData.email,
+      joinDate: new Date().toLocaleDateString('ru-RU', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+      }),
+    };
+    
+    login(userData);
   };
 
   const clearSavedData = () => {
@@ -102,7 +135,7 @@ function LoginForm() {
         <h2 className="text-3xl font-bold text-center mb-2 font-sans">LOGIN</h2>
         <p className="text-gray-600 text-center mb-8 font-sans">Join our podcast community</p>
         
-        <div>
+        <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1 font-sans">Email</label>
             <input
@@ -159,16 +192,16 @@ function LoginForm() {
           </div>
           
           <button
-            onClick={handleSubmit}
+            type="submit"
             className="w-full bg-[#CD4631] hover:bg-red-600 text-white font-semibold py-3 px-4 rounded-md transition duration-300 font-sans"
           >
             LOGIN
           </button>
-        </div>
+        </form>
         
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-600 font-sans">
-            DON`T HAVE AN ACCOUNT? <button className="text-red-500 hover:underline font-medium">REGISTRATION</button>
+            DON`T HAVE AN ACCOUNT? <button onClick={() => navigate('/register')} className="text-red-500 hover:underline font-medium">REGISTRATION</button>
           </p>
         </div>
       </div>

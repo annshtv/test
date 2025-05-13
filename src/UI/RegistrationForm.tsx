@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function RegistrationForm() {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -61,7 +63,14 @@ function RegistrationForm() {
     setErrors({});
 
     alert('Account created successfully!', formData);
-
+    const userData = {
+      username: formData.fullName,
+      email: formData.email,
+      joinDate: new Date().toISOString()
+    };
+  
+    localStorage.setItem('user', JSON.stringify(userData));
+    navigate('/account'); 
   };
 
   return (
