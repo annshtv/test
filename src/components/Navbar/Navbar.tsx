@@ -1,12 +1,14 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import ButtonSubscribe from "../../UI/Buttons/ButtonSubscribe";
 import styles from "./Navbar.module.css";
 import CustomizedMenus from "../../UI/Buttons/CustomizedMenus";
 import styled from "styled-components";
+import { useAuth } from "../../context/AuthContext";
 
 import RegistrationForm from "../../UI/RegistrationForm";
 import LoginForm from "../../UI/LoginForm";
+import AuthenticatedNavbar from "./AuthenticatedNavbar";
 
 const HeaderWrapper = styled.div`
   header {
@@ -120,13 +122,17 @@ const CloseButton = styled.button`
 `;
 
 function Navbar() {
+  const { isAuthenticated } = useAuth();
   const [showRegistration, setShowRegistration] = useState(false);
+  const [showLogIn, setShowLogIn] = useState(false);
+
+  if (isAuthenticated) {
+    return <AuthenticatedNavbar />;
+  }
 
   const toggleRegistration = () => {
     setShowRegistration(!showRegistration);
   };
-
-  const [showLogIn, setShowLogIn] = useState(false);
 
   const toggleLogIn = () => {
     setShowLogIn(!showLogIn);

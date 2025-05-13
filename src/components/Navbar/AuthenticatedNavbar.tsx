@@ -6,13 +6,18 @@ import styled from "styled-components";
 import { useAuth } from "../../context/AuthContext";
 
 const HeaderWrapper = styled.div`
-  .navigation {
+  header {
     background-color: #f7ede8;
+    padding: 0px;
+    min-height: 1448px;
+    max-width: 100%;
+    background-image: url("pictures/Header.png");
+    margin-right: auto;
+    margin-left: auto;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
     align-items: center;
-    padding: 16px 32px;
-    width: 100%;
   }
 
   .navigation p {
@@ -26,6 +31,7 @@ const HeaderWrapper = styled.div`
   .menus {
     display: flex;
     gap: 60px;
+    max-width: 1160px;
     align-items: baseline;
   }
 
@@ -93,11 +99,10 @@ const HeaderWrapper = styled.div`
   }
 `;
 
-function NavbarAcc() {
+function AuthenticatedNavbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const { user, logout } = useAuth();
   const navigate = useNavigate();
-
   const getUserInitials = () => {
     if (!user || !user.username) return "U";
     return user.username.charAt(0).toUpperCase();
@@ -190,4 +195,4 @@ function NavbarAcc() {
   );
 }
 
-export default NavbarAcc;
+export default AuthenticatedNavbar;
