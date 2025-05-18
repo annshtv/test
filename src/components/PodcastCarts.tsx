@@ -1,16 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './PodcastEpisodes.module.css';
 import useEpisodeStore, { EpisodeStoreState } from './useEpisodeStore';
+import { Heart } from 'lucide-react';
 
 function PodcastCarts() {
   const categories = ["All", "Business", "News", "Tips & Trick", "Productivity", "Health", "Tech", "Social Issues"];
   const [activeCategory, setActiveCategory] = useState("All");
   const navigate = useNavigate();
   const setSelectedEpisode = useEpisodeStore((state: EpisodeStoreState) => state.setSelectedEpisode);
+  
+  // Состояние для хранения избранных эпизодов
+  const [favorites, setFavorites] = useState([]);
+
+  // Загрузка избранных эпизодов из localStorage при монтировании компонента
+  useEffect(() => {
+    const storedFavorites = localStorage.getItem('favoritePodcasts');
+    if (storedFavorites) {
+      setFavorites(JSON.parse(storedFavorites));
+    }
+  }, []);
+
+  // Сохранение избранных эпизодов в localStorage при изменении состояния
+  useEffect(() => {
+    localStorage.setItem('favoritePodcasts', JSON.stringify(favorites));
+  }, [favorites]);
 
   const episodes = [
     {
+      id: 1,
       img: 'cover.png',
       alt: 'Pandemic Becoming Endemic',
       ep: 'Eps. 6',
@@ -22,6 +40,7 @@ function PodcastCarts() {
       date: 'Oct 15, 2021'
     },
     {
+      id: 2,
       img: 'coverr5.png',
       alt: 'Tesla Autopilot Controversy',
       ep: 'Eps. 5',
@@ -33,6 +52,7 @@ function PodcastCarts() {
       date: 'Oct 8, 2021'
     },
     {
+      id: 3,
       img: 'coverr4.png',
       alt: "Women's Rights? Is it alright?",
       ep: 'Eps. 4',
@@ -44,6 +64,7 @@ function PodcastCarts() {
       date: 'Oct 1, 2021'
     },
     {
+      id: 4,
       img: 'coverr3.png',
       alt: 'How to Deal with Self-Confidence',
       ep: 'Eps. 3',
@@ -55,6 +76,7 @@ function PodcastCarts() {
       date: 'Sep 24, 2021'
     },
     {
+      id: 5,
       img: 'coverr2.png',
       alt: 'Type of Social Classes of People',
       ep: 'Eps. 2',
@@ -66,6 +88,7 @@ function PodcastCarts() {
       date: 'Sep 17, 2021'
     },
     {
+      id: 6,
       img: 'coverr1.png',
       alt: 'Are you a Perplexed Mind Person?',
       ep: 'Eps. 1',
@@ -81,10 +104,22 @@ function PodcastCarts() {
   const filteredEpisodes = activeCategory === "All" 
     ? episodes 
     : episodes.filter(ep => ep.categories.includes(activeCategory));
+    
   const handleEpisodeClick = (episode) => {
     setSelectedEpisode(episode);
     navigate('/podcast-detail');
     window.scrollTo(0, 0);
+  };
+
+  // Функция для переключения избранного статуса эпизода
+  const toggleFavorite = (e, episodeId) => {
+    e.stopPropagation(); // Предотвращаем переход на детальную страницу
+    
+    if (favorites.includes(episodeId)) {
+      setFavorites(favorites.filter(id => id !== episodeId));
+    } else {
+      setFavorites([...favorites, episodeId]);
+    }
   };
 
   return (
@@ -104,10 +139,20 @@ function PodcastCarts() {
       <div className={styles.grid}>
         {filteredEpisodes.map((ep, idx) => (
           <div 
-            className={`${styles.card} cursor-pointer hover:shadow-lg transition-shadow duration-300`} 
+            className={`${styles.card} cursor-pointer hover:shadow-lg transition-shadow duration-300 relative`} 
             key={idx}
             onClick={() => handleEpisodeClick(ep)}
           >
+            <div 
+              className="absolute top-4 right-4 z-10 cursor-pointer bg-white rounded-full p-1 shadow-md"
+              onClick={(e) => toggleFavorite(e, ep.id)}
+            >
+              {favorites.includes(ep.id) ? (
+                <Heart size={20} color="#CD4631" fill="#CD4631" />
+              ) : (
+                <Heart size={20} color="#333" />
+              )}
+            </div>
             <div className={styles.content}>
               <img
                 src={`pictures/${ep.img}`}

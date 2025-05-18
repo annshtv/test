@@ -130,3 +130,30 @@
     left: 100px;
     bottom: 100px;
 }
+
+@media screen and (max-width:375px) {
+  .info2 {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .carts {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info {
+    height: 100%;
+    flex-direction: column;
+  }
+  .cart {
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  .text svg {
+    position: relative;
+    left: 0;
+    bottom: 0;
+  }
+}

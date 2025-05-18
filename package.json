@@ -21,6 +21,8 @@
     "@tailwindcss/vite": "^4.0.17",
     "@types/react-router-dom": "^5.3.3",
     "bcrypt": "^5.1.1",
+    "framer-motion": "^12.12.1",
+    "lucide-react": "^0.510.0",
     "next-auth": "^4.24.11",
     "podcast-api": "^2.0.4",
     "react": "^18.3.1",

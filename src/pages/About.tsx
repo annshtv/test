@@ -132,6 +132,14 @@ const HeaderWrapper = styled.div`
   color: #000;
 }
 
+@media screen and (max-width: 375px) {
+.carts {
+
+  flex-direction: column;
+
+  }
+}
+
 `;
 
 function About() {

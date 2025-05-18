@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import CustomizedMenus from "../../UI/Buttons/CustomizedMenus";
@@ -118,20 +118,22 @@ function NavbarAcc() {
     setDropdownOpen(false);
   };
 
-  const handleClickOutside = (e) => {
-    if (!e.target.closest('.avatar-container') && !e.target.closest('.dropdown-menu')) {
+  const handleClickOutside = (e: unknown) => {
+    const target = (e as MouseEvent).target as HTMLElement;
+    if (!target.closest('.avatar-container') && !target.closest('.dropdown-menu')) {
       setDropdownOpen(false);
     }
   };
 
-  useState(() => {
+
+  useEffect(() => {
     if (dropdownOpen) {
-      document.addEventListener('click', handleClickOutside);
+      document.addEventListener('click', handleClickOutside as EventListener);
     } else {
-      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener('click', handleClickOutside as EventListener);
     }
     return () => {
-      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener('click', handleClickOutside as EventListener);
     };
   }, [dropdownOpen]);
 

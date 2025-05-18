@@ -23,6 +23,7 @@ const HeaderWrapper = styled.div`
     align-items: center;
     background-size: cover;
     padding-bottom: 100px;
+    gap: 20px;
   }
 
   .navigation p {
